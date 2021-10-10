@@ -1,0 +1,28 @@
+@use "../../../../styles/atomic/text";
+@use "../../../../styles/breakpoints" as bp;
+
+:host {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+
+    @include bp.sm {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include bp.lg {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.manga-follow-item {
+    display: flex;
+    flex-flow: column nowrap;
+    grid-gap: 1rem;
+}
+
+
+.mange-title {
+    @extend .text-base;
+    font-size: 1.25rem;
+}

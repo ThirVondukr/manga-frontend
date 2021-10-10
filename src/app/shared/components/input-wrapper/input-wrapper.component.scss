@@ -1,0 +1,21 @@
+@use "../../../../styles/atomic/text";
+
+.input-wrapper {
+    display: flex;
+    padding: 0.5rem 1rem;
+    flex-flow: column nowrap;
+
+    &:hover {
+        .underline {
+            transform: scaleX(1);
+        }
+    }
+
+    background-color: white;
+    border-radius: 2px;
+}
+
+:host ::ng-deep input {
+    @extend .text-base;
+    color: black;
+}

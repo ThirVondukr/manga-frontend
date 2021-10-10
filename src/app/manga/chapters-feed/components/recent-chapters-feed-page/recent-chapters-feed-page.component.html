@@ -1,0 +1,8 @@
+<ng-container *ngFor="let group of chapterGroups$ | async">
+    <app-chapter-group-item
+        [chapterGroup]="group"
+    >
+    </app-chapter-group-item>
+</ng-container>
+
+

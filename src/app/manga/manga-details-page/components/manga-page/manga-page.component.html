@@ -1,0 +1,36 @@
+<ng-container *ngIf="manga$ | async as manga">
+    <div class="manga-container">
+        <img
+            [src]="manga.cover?.imageUrl"
+            app-cdn-image
+            class="cover"
+        >
+        <div class="manga-info-container">
+            <p class="title">
+                <app-manga-star
+                    [liked]="manga.isLikedByViewer"
+                    [mangaId]="manga.id"
+                >
+                </app-manga-star>
+                {{manga.title}}
+            </p>
+            <p
+                *ngIf="artistsList$ | async"
+                class="text-base"
+            >
+                Artists: {{artistsList$ | async}}
+            </p>
+            <p
+                *ngIf="writersList$ | async"
+                class="text-base"
+            >
+                Writers: {{writersList$ | async}}
+            </p>
+            <ng-container *ngIf="description$ | async as description">
+                <p class="text-base">{{description}}</p>
+            </ng-container>
+        </div>
+    </div>
+    <app-chapter-list [manga]="manga"></app-chapter-list>
+</ng-container>
+

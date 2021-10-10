@@ -1,0 +1,18 @@
+@use "../../../../styles/colors";
+
+:host {
+    position: relative;
+}
+
+.subject {
+    cursor: pointer;
+}
+
+.tooltip {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+

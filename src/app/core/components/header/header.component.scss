@@ -1,0 +1,29 @@
+@use "src/styles/colors";
+@use "sass:math";
+
+$icon-size: 40px;
+$header-height: 50px;
+:host {
+    top: 0;
+    position: sticky;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: colors.$primary;
+    color: colors.$text;
+
+    height: $header-height;
+    padding: 0 math.div($header-height - $icon-size, 2);
+
+
+    &__icon {
+        width: $icon-size;
+        height: $icon-size;
+    }
+
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.75);
+}

@@ -1,0 +1,28 @@
+<nav
+    [@open]="sidebarService.isOpen$ | async"
+    [class.sidenav--mobile]="isMobile$ | async"
+    class="sidenav"
+>
+
+    <p [routerLink]="mangaRouting.HOME" class="logo">
+        M
+    </p>
+    <div class="nav-list">
+        <a [routerLink]="mangaRouting.HOME"
+           class="nav-item"
+           routerLinkActive="nav-item--active"
+        >Home
+        </a>
+        <a [routerLink]="mangaRouting.FEED"
+           class="nav-item"
+           routerLinkActive="nav-item--active"
+        >Latest Updates</a>
+    </div>
+</nav>
+
+<div
+    (click)="onBackgroundClick()"
+    [@backgroundFade]="(shouldShowBackground$ | async) ? 'shown' : 'hidden'"
+    class="background"
+>
+</div>

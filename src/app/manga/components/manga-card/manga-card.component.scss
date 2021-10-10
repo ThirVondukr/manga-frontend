@@ -1,0 +1,14 @@
+@use "../../../../styles/mixins";
+@use "../../../../styles/atomic/text";
+
+:host {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1rem 2rem;
+}
+
+
+.cover {
+    @include mixins.rounded(0.5);
+    width: 100%;
+}

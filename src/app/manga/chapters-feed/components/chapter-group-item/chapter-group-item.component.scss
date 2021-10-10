@@ -1,0 +1,50 @@
+@use "src/styles/colors";
+@use "src/styles/breakpoints" as bp;
+@use "src/styles/mixins";
+
+@use "sass:color";
+
+
+.header {
+    @include mixins.padding-x(1.5rem);
+    @include mixins.padding-y(0.5rem);
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    grid-column-gap: 1rem;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    background-color: colors.$primary;
+
+    &:hover {
+        background-color: colors.$primary-lighter
+    }
+}
+
+
+.cover {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 9000px;
+    width: 3rem;
+}
+
+.chapter-list {
+    display: flex;
+    flex-flow: column nowrap;
+
+    &__element {
+        @include mixins.padding-x(2rem);
+        @include mixins.padding-y(0.25rem);
+        @include mixins.text(1.5rem);
+        @include mixins.alternating-list;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        height: 40px;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,39 @@
+@use "src/styles/mixins";
+@use "src/styles/breakpoints" as bp;
+
+:host {
+    max-width: 100vw;
+    display: grid;
+    grid-template-areas:
+        "sidenav header"
+        "sidenav container";
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content 1fr;
+}
+
+app-sidenav {
+    grid-area: sidenav;
+}
+
+app-header {
+    grid-area: header;
+}
+
+.container-wrapper {
+    grid-area: container;
+    align-self: start;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: bp.$md;
+    padding: 1.5rem;
+
+    @include bp.sm {
+        padding: 3rem;
+    }
+
+    @include bp.md {
+        padding: 4rem;
+    }
+}

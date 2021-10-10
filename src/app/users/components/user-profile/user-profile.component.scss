@@ -1,0 +1,25 @@
+@use "../../../../styles/colors";
+@use "../../../../styles/mixins";
+@use "../../../../styles/breakpoints" as bp;
+
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    grid-gap: 4rem;
+}
+
+.user-container {
+    flex-flow: row nowrap;
+    display: flex;
+    grid-column-gap: 2rem;
+    align-items: flex-start;
+}
+
+.user-avatar {
+    width: 120px;
+}
+
+.user-info {
+    display: flex;
+    flex-flow: column nowrap;
+}

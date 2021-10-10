@@ -1,0 +1,42 @@
+@use "src/styles/colors";
+
+@mixin __text() {
+    color: colors.$text;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    //line-height: 1.5em;
+}
+
+.text {
+    @include __text;
+    font-size: 1rem;
+}
+
+.text-sm {
+    @include __text;
+    font-size: 7/8rem;
+}
+
+.text-base {
+    @include __text;
+    font-size: 1rem;
+}
+
+
+.text-md {
+    @include __text;
+    font-size: 1.5rem;
+}
+
+.text-lg {
+    @include __text;
+    font-size: 2rem;
+}
+
+.text-link {
+    &:hover {
+        color: colors.$primary-600;
+    }
+
+    text-decoration: none;
+}

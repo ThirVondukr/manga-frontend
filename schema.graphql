@@ -1,0 +1,136 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Root
+    mutation: Mutation
+}
+
+union LikeMangaResponse = LikeMangaSuccess | NotAuthenticated | NotFound
+
+type Author {
+    id: UUID!
+    name: String!
+}
+
+type LikeMangaSuccess {
+    manga: Manga!
+}
+
+type Manga {
+    artists: [Author!]!
+    arts: [MangaArt!]!
+    chapters(pagination: Pagination!): MangaChaptersPaginationResponse!
+    cover: MangaArt
+    id: UUID!
+    infos: [MangaInfo!]!
+    isLikedByViewer: Boolean!
+    likesCount: Int!
+    title: String!
+    titleSlug: String!
+    writers: [Author!]!
+}
+
+type MangaArt {
+    id: UUID!
+    imageUrl: String!
+    mangaId: UUID!
+}
+
+type MangaChapter {
+    createdAt: DateTime!
+    id: UUID!
+    language: String!
+    manga: Manga!
+    mangaId: UUID!
+    number: String!
+    publishedAt: DateTime!
+    title: String
+    updatedAt: DateTime!
+}
+
+type MangaChapterConnection {
+    edges: [MangaChapterEdge!]!
+    pageInfo: PageInfo!
+}
+
+type MangaChapterEdge {
+    cursor: String!
+    node: MangaChapter!
+}
+
+type MangaChaptersPaginationResponse {
+    items: [MangaChapter!]!
+    pageInfo: PagePaginationPageInfo!
+}
+
+type MangaInfo {
+    description: String!
+    id: UUID!
+    lang: String!
+    mangaId: UUID!
+    title: String!
+}
+
+type MangaPagePagination {
+    items: [Manga!]!
+    pageInfo: PagePaginationPageInfo!
+}
+
+type Mutation {
+    setMangaLiked(liked: Boolean! = true, mangaId: UUID!): LikeMangaResponse!
+}
+
+type NotAuthenticated {
+    message: String!
+}
+
+type NotFound {
+    entityId: UUID!
+    message: String!
+}
+
+type PageInfo {
+    endCursor: String!
+    hasNextPage: Boolean!
+}
+
+type PagePaginationPageInfo {
+    hasNext: Boolean!
+    page: Int!
+    pageSize: Int!
+    totalCount: Int!
+    totalPages: Int!
+}
+
+type Root {
+    getMangaById(mangaId: UUID!): Manga
+    getMangaByTitleSlug(titleSlug: String!): Manga
+    getUserById(userId: UUID!): User
+    getUserByUsername(username: String!): User
+    popularManga: [Manga!]!
+    recentChapters(after: DateTime, first: Int!): MangaChapterConnection!
+    searchManga(titleLike: String! = ""): [Manga!]!
+    viewer: User
+}
+
+type User {
+    avatarUrl: String!
+    chaptersFeed(after: DateTime, first: Int!): MangaChapterConnection!
+    email: String!
+    followedManga(pagination: Pagination!): MangaPagePagination!
+    id: UUID!
+    joinedAt: DateTime!
+    likedMangaCount: Int!
+    username: String!
+}
+
+input Pagination {
+    page: Int = 1
+    pageSize: Int = 10
+}
+
+
+scalar UUID
+
+"Date with time (isoformat)"
+scalar DateTime

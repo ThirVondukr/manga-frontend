@@ -1,0 +1,44 @@
+@use "../../../../../styles/breakpoints" as bp;
+
+:host {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1rem;
+
+    @include bp.sm {
+        display: flex;
+        flex-flow: column nowrap;
+        grid-gap: 0.5rem;
+    }
+}
+
+.manga-info {
+    display: flex;
+    flex-flow: column nowrap;
+    grid-gap: 0.5rem;
+}
+
+.title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 1.5rem;
+    overflow: hidden;
+
+    @include bp.sm {
+        font-size: 1.25rem;
+    }
+}
+
+.stars {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    grid-gap: 0.5rem;
+}
+
+app-manga-star {
+    width: 1rem;
+    height: 1rem;
+    --app-icon-size: 1.5rem;
+}

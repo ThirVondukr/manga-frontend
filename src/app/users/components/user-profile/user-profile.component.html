@@ -1,0 +1,15 @@
+<div class="user-container">
+    <img [user]="user" app-user-avatar class="user-avatar">
+
+    <div class="user-info">
+        <p class="text-lg">{{user.username}}</p>
+        <p class="text-base">
+            <span class="inline-block">Joined {{user.joinedAt | timeAgo}}</span>&nbsp;
+            <span class="inline-block">({{user.joinedAt | date}})</span>
+        </p>
+    </div>
+</div>
+<div>
+    <p class="text-lg mb-2">Follows:</p>
+    <app-user-profile-manga-follows [user]="user"></app-user-profile-manga-follows>
+</div>

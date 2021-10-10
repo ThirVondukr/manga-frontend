@@ -1,0 +1,61 @@
+@use "../../../../styles/mixins";
+@use "../../../../styles/colors";
+
+:host {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    & > *:not(:last-child) {
+        margin-right: 0.75rem;
+    }
+}
+
+
+.pagination-item {
+    @include mixins.rounded();
+    @include mixins.text(1.25rem);
+    @include mixins.padding-x(1rem);
+
+    user-select: none;
+    background-color: colors.$background-lighter;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+
+    height: 32px;
+
+    &--page {
+        padding: 0;
+        width: 32px;
+    }
+
+    &--active {
+        background-color: var(--active-item-background-color, colors.$primary);
+        color: var(--active-item-color, colors.$text);
+        border: none;
+    }
+
+    &:disabled {
+        @include colors.disabled;
+        cursor: default;
+    }
+
+    &:not(&:disabled) {
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--active-item-background-color, colors.$primary);
+                color: var(--active-item-color, colors.$text);
+                border: none;
+            }
+        }
+
+        //&:active {
+        //    background-color: white;
+        //    color: black;
+        //}
+    }
+}

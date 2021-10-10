@@ -1,0 +1,18 @@
+<div class="header">
+    <p class="text-md">Chapter List</p>
+</div>
+<div
+    *ngFor="let chapter of items$ | async"
+    class="chapter"
+>
+    <p class="text-base">{{chapter.number}} {{chapter.title}}</p>
+    <p class="text-base">{{chapter.publishedAt | timeAgo}}</p>
+</div>
+<app-pagination-nav (currentPageChange)="selectPage($event)"
+                    *ngIf="pageInfo$ | async as pageInfo"
+                    [currentPage]="pageInfo.page"
+                    [paginationSize]="(paginationSize$ | async) || 1"
+                    [totalPages]="pageInfo.totalPages"
+                    class="pagination"
+>
+</app-pagination-nav>

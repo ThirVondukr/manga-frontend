@@ -1,0 +1,31 @@
+<app-manga-block>
+    <a [routerLink]="mangaRouting.FEED"
+       class="block-title text-link"
+       header
+    >
+        Recent Chapters
+    </a>
+    <div class="recent-chapters">
+        <app-recent-chapter-item
+            *ngFor="let chapter of latestChapters$ | async"
+            [chapter]="chapter"
+        >
+        </app-recent-chapter-item>
+    </div>
+</app-manga-block>
+
+
+<app-manga-block>
+    <p
+        class="block-title"
+        header>
+        Most Liked
+    </p>
+    <div class="most-liked-manga">
+        <app-popular-manga-item
+            *ngFor="let manga of popularManga$ | async"
+            [manga]="manga"
+        >
+        </app-popular-manga-item>
+    </div>
+</app-manga-block>

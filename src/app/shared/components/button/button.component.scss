@@ -1,0 +1,22 @@
+@use "../../../../styles/colors";
+@use "../../../../styles/mixins";
+@use "../../../../styles/atomic/text";
+
+:host {
+    @include mixins.rounded;
+    @extend .text-base;
+    font-weight: bold;
+    box-sizing: border-box;
+    background-color: colors.$primary;
+    padding: 0.66em 0.75em;
+    border: none;
+    cursor: pointer;
+
+    &:disabled {
+        @include colors.disabled;
+    }
+}
+
+:host-context(.outline) {
+    border: 2px solid white;
+}

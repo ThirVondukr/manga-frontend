@@ -1,0 +1,26 @@
+@use "../../../../../styles/breakpoints" as bp;
+@use "../../../../../styles/colors";
+
+
+:host {
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    grid-gap: 1rem;
+    align-items: center;
+
+    app-manga-cover ::ng-deep img {
+        border-radius: 9999px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+
+    background-color: colors.$background-darker
+}
+
+.recent-chapter-info {
+    display: flex;
+    flex-flow: column nowrap;
+    grid-gap: 0.5rem;
+}

@@ -1,0 +1,33 @@
+@use "../../../../styles/breakpoints" as bp;
+
+:host {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    & > *:not(:last-child) {
+        //margin-right: 1rem;
+    }
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+.username {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0.5rem;
+}
+
+
+.button-logout {
+    display: none;
+    @include bp.sm {
+        display: unset;
+    }
+    margin: 0 0.5rem;
+}

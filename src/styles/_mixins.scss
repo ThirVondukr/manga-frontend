@@ -1,0 +1,41 @@
+@use "colors";
+@use "sass:color";
+
+@mixin rounded($roundness: 1) {
+    border-radius: 4px * $roundness;
+}
+
+@mixin text($font-size: 1rem) {
+    color: colors.$text;
+    margin: 0;
+    font-size: $font-size;
+    font-family: "Montserrat", sans-serif;
+}
+
+@mixin padding-x($padding) {
+    padding-left: $padding;
+    padding-right: $padding;
+}
+
+@mixin padding-y($padding) {
+    padding-top: $padding;
+    padding-bottom: $padding;
+}
+
+@mixin alternating-list(
+    $primary: colors.$background-darker,
+    $alternate: colors.$background-darker-alternate,
+    $hover: color.scale($alternate, $lightness: 5%),
+) {
+    background-color: $primary;
+    &:hover {
+        background-color: $hover;
+    }
+    &:nth-child(2n) {
+        background-color: $alternate;
+
+        &:hover {
+            background-color: $hover;
+        }
+    }
+}

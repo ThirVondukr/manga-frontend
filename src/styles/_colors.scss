@@ -1,0 +1,34 @@
+@use "sass:color";
+
+$primary-50: #FCE4EC;
+$primary-100: #F8BBD0;
+$primary-200: #F48FB1;
+$primary-300: #F06292;
+$primary-400: #EC407A;
+$primary-500: #E91E63;
+$primary-600: #D81B60;
+$primary-700: #C2185B;
+$primary-800: #AD1457;
+$primary-900: #880E4F;
+
+$_gray-dark: rgb(45, 45, 45);
+
+$text: white;
+$text-disabled: color.scale($text, $lightness: -15%);
+
+$primary: $primary-600;
+$primary-lighter: color.scale($primary, $lightness: 10%);
+
+$background-primary: $_gray-dark;
+$background-lighter: color.scale($background-primary, $lightness: 10%);
+$background-darker: color.scale($background-primary, $lightness: -40%);
+$background-darker-alternate: color.scale($background-darker, $lightness: 5%);
+
+
+$disabled: $_gray-dark;
+$disabled-background: #505050;
+
+@mixin disabled() {
+    color: $disabled;
+    background-color: $disabled-background;
+}

@@ -1,0 +1,21 @@
+<div
+    [routerLink]="mangaRoutingService.mangaDetailsPage(manga.titleSlug)"
+    class="header"
+>
+    <img
+        [src]="manga.cover?.imageUrl"
+        alt="{{manga.title}} cover"
+        app-cdn-image
+        class="cover"
+    >
+    <p
+        class="text-md">
+        {{manga.title}}
+    </p>
+</div>
+<div class="chapter-list">
+    <div *ngFor="let chapter of chapterGroup" class="chapter-list__element">
+        <p class="text-base">Chapter {{chapter.number}}{{ chapter?.title && ":"}} {{chapter?.title}}</p>
+        <p class="text-base">{{chapter.publishedAt | date}}</p>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<button
+    (click)="previous()"
+    [disabled]="!(hasPrevious$ | async)"
+    class="pagination-item"
+>
+    Prev
+</button>
+
+<button
+    (click)="choosePage(page)"
+    *ngFor="let page of pages$ | async"
+    [class.pagination-item--active]="page == (currentPage$ | async)"
+    class="pagination-item pagination-item--page"
+>
+    {{page}}
+</button>
+
+<button
+    (click)="next()"
+    [disabled]="!(hasNext$ | async)"
+    class="pagination-item"
+>
+    Next
+</button>

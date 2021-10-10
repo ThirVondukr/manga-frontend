@@ -1,0 +1,7 @@
+:host {
+    border-radius: 9999px;
+}
+
+:host-context(.clickable) {
+    cursor: pointer;
+}

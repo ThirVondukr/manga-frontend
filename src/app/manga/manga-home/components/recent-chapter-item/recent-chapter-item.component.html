@@ -1,0 +1,10 @@
+<app-manga-cover [manga]="chapter.manga"></app-manga-cover>
+<div *ngIf="chapter.manga as manga" class="recent-chapter-info">
+    <a [routerLink]="mangaRouting.mangaDetailsPage(manga.titleSlug)" class="text-md text-link">
+        Chapter {{chapter.number}}
+    </a>
+
+    <p class="text-base">{{manga.title}}</p>
+    <p class="text-base">{{chapter.publishedAt | timeAgo}}</p>
+</div>
+
