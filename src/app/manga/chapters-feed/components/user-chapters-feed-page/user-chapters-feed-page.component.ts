@@ -7,7 +7,6 @@ import {concat, Observable, ReplaySubject} from "rxjs";
 import {groupBy} from "src/app/shared/lib/group-by";
 import {UserChaptersFeed_getUserByUsername_chaptersFeed_edges_node} from "src/app/graphql/__generated__/UserChaptersFeed";
 
-
 @Component({
     templateUrl: "./user-chapters-feed-page.component.html",
     styleUrls: ["./user-chapters-feed-page.component.scss"],
@@ -53,10 +52,6 @@ export class UserChaptersFeedPageComponent {
             takeWhile(feed => feed.pageInfo.hasNextPage, true),
         );
 
-        return chaptersFeed$.pipe(
-            map(feed => feed.edges.map(edge => edge.node)),
-            map(chapters => groupBy(chapters, chapter => chapter.manga.id)),
-            scan((accumulator: UserChaptersFeed_getUserByUsername_chaptersFeed_edges_node[][], groups) => [...accumulator, ...groups], [])
-        );
+        return ChaptersFeedService.createChapterGroups(chaptersFeed$);
     }
 }
