@@ -1,9 +1,12 @@
 import {ChangeDetectionStrategy, Component} from "@angular/core";
-import {exhaustMap, map, takeWhile, tap, withLatestFrom} from "rxjs/operators";
-import {concat, Observable, ReplaySubject} from "rxjs";
+import {Observable} from "rxjs";
 import {InfiniteScrollService} from "src/app/shared/services/infinite-scroll.service";
 import {ChaptersFeedService} from "src/app/manga/chapters-feed/chapters-feed.service";
-import {GetRecentChapters_recentChapters_edges_node as RecentChapter} from "src/app/graphql/__generated__/GetRecentChapters";
+import {
+    GetRecentChapters_recentChapters as Response,
+    GetRecentChapters_recentChapters_edges_node as RecentChapter
+} from "src/app/graphql/__generated__/GetRecentChapters";
+import {InfiniteScrollBase} from "src/app/shared/infinite-scroll.base";
 
 
 @Component({
@@ -11,28 +14,28 @@ import {GetRecentChapters_recentChapters_edges_node as RecentChapter} from "src/
     styleUrls: ["./recent-chapters-feed-page.component.scss"],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RecentChaptersFeedPageComponent {
-    public readonly chapterGroups$: Observable<RecentChapter[][]>;
-
+export class RecentChaptersFeedPageComponent extends InfiniteScrollBase<RecentChapter[], Response> {
     private readonly _PAGE_SIZE = 20
 
     constructor(
-        private readonly _chaptersService: ChaptersFeedService,
-        private readonly _scroll: InfiniteScrollService,
+        public readonly _chaptersService: ChaptersFeedService,
+        _scroll: InfiniteScrollService,
     ) {
-        const cursor$ = new ReplaySubject<any>(1);
-        const initialRequest$ = this._chaptersService.recentChapters({first: this._PAGE_SIZE});
-        const infiniteScrollRequests$ = this._scroll.onScrollToBottom({distance: 200}).pipe(
-            withLatestFrom(cursor$),
-            exhaustMap(([_, cursor]) => this._chaptersService.recentChapters({
-                first: this._PAGE_SIZE,
-                after: cursor
-            }))
-        );
-        const chaptersFeed$ = concat(initialRequest$, infiniteScrollRequests$).pipe(
-            tap(data => cursor$.next(data.pageInfo.endCursor)),
-            takeWhile(data => data.pageInfo.hasNextPage, true),
-        );
-        this.chapterGroups$ = ChaptersFeedService.createChapterGroups(chaptersFeed$);
+        super(_scroll);
+        this.init();
     }
+
+    protected initialRequest = () => this._chaptersService.recentChapters({first: this._PAGE_SIZE});
+
+    protected infiniteScrollRequest(cursor: any): Observable<Response> {
+        return this._chaptersService.recentChapters({
+            first: this._PAGE_SIZE,
+            after: cursor
+        });
+    }
+
+    protected mapCursor = (res: Response) => res.pageInfo.endCursor;
+    protected mapHasNextPage = (response: Response) => response.pageInfo.hasNextPage;
+    protected mapItems = (response: Observable<Response>) => ChaptersFeedService.createChapterGroups(response);
+
 }
