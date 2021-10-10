@@ -24,7 +24,6 @@ export class UserChaptersFeedPageComponent {
         const username$ = this._route.paramMap.pipe(
             map(params => params.get("username")),
             filter((username): username is string => username !== null),
-            shareReplay(),
         );
 
         this.chapterGroups$ = username$.pipe(
