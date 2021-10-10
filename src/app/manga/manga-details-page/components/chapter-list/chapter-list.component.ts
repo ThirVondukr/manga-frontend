@@ -26,9 +26,9 @@ export class ChapterListComponent extends PaginatedListBase<GetMangaChapters_get
     public paginationSize$ = this._breakpointObserver.breakpoint$.pipe(
         map(bp => 3 + (bp - 1) * 4)
     )
-    protected _pageSize$ = this._breakpointObserver.breakpoint$.pipe(map(
-        bp => 15 + (bp - 1) * 5
-    ));
+    protected _pageSize$ = this._breakpointObserver.breakpoint$.pipe(
+        map(bp => 15 + (bp - 1) * 5)
+    );
 
     constructor(
         private _mangaService: MangaService,
