@@ -32,7 +32,6 @@ export class UserChaptersFeedPageComponent {
 
     private _getChaptersFeed(username: string) {
         const cursor$ = new ReplaySubject<any>(1);
-
         const initialRequest$ = this._chaptersFeedService.userChapters({
             first: 40,
             username,
@@ -47,7 +46,6 @@ export class UserChaptersFeedPageComponent {
         );
 
         const chaptersFeed$ = concat(initialRequest$, infiniteScrollRequest$).pipe(
-            map(res => res.data.getUserByUsername!.chaptersFeed),
             tap(feed => cursor$.next(feed.pageInfo.endCursor)),
             takeWhile(feed => feed.pageInfo.hasNextPage, true),
         );

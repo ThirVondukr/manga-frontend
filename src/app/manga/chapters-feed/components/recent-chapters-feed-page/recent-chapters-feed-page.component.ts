@@ -30,9 +30,8 @@ export class RecentChaptersFeedPageComponent {
             }))
         );
         const chaptersFeed$ = concat(initialRequest$, infiniteScrollRequests$).pipe(
-            map(res => res.data.recentChapters),
-            takeWhile(data => data.pageInfo.hasNextPage, true),
             tap(data => cursor$.next(data.pageInfo.endCursor)),
+            takeWhile(data => data.pageInfo.hasNextPage, true),
         );
         this.chapterGroups$ = ChaptersFeedService.createChapterGroups(chaptersFeed$);
     }
