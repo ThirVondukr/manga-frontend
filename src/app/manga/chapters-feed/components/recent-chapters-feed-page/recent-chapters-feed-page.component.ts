@@ -7,6 +7,7 @@ import {
     GetRecentChapters_recentChapters_edges_node as RecentChapter
 } from "src/app/graphql/__generated__/GetRecentChapters";
 import {InfiniteScrollBase} from "src/app/shared/infinite-scroll.base";
+import {map} from "rxjs/operators";
 
 
 @Component({
@@ -14,8 +15,9 @@ import {InfiniteScrollBase} from "src/app/shared/infinite-scroll.base";
     styleUrls: ["./recent-chapters-feed-page.component.scss"],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RecentChaptersFeedPageComponent extends InfiniteScrollBase<RecentChapter[], Response> {
-    private readonly _PAGE_SIZE = 20
+export class RecentChaptersFeedPageComponent extends InfiniteScrollBase<Response> {
+    private readonly _PAGE_SIZE = 20;
+    public readonly chapterGroups$: Observable<RecentChapter[][]>;
 
     constructor(
         private readonly _chaptersService: ChaptersFeedService,
@@ -23,18 +25,15 @@ export class RecentChaptersFeedPageComponent extends InfiniteScrollBase<RecentCh
     ) {
         super(_scroll);
         this.init();
+        this.chapterGroups$ = ChaptersFeedService.createChapterGroups(this._response$);
     }
 
-    protected initialRequest = () => this._chaptersService.recentChapters({first: this._PAGE_SIZE});
+    override initialRequest = () => this._chaptersService.recentChapters({first: this._PAGE_SIZE});
 
-    protected infiniteScrollRequest(cursor: any): Observable<Response> {
+    override infiniteScrollRequest(cursor: any) {
         return this._chaptersService.recentChapters({
             first: this._PAGE_SIZE,
             after: cursor
         });
     }
-
-    protected mapCursor = (res: Response) => res.pageInfo.endCursor;
-    protected mapHasNextPage = (response: Response) => response.pageInfo.hasNextPage;
-    protected mapItems = (response: Observable<Response>) => ChaptersFeedService.createChapterGroups(response);
 }
