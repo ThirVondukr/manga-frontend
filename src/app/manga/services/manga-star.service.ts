@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {Apollo, gql} from "apollo-angular";
 import {STAR_MANGA_MUTATION} from "src/app/manga/graphql/mutations";
 import {StarManga, StarMangaVariables} from "src/app/manga/graphql/__generated__/StarManga";
-import {FetchResult} from "@apollo/client";
+import {FetchResult} from "@apollo/client/core";
 import {MangaFragment} from "src/app/manga/services/__generated__/MangaFragment";
 import {AuthService} from "src/app/auth/services/auth.service";
 
@@ -62,7 +62,3 @@ export class MangaStarService {
         });
     }
 }
-
-// GET /posts/{id}
-// POST /posts/
-// POST /posts/{id}/publish

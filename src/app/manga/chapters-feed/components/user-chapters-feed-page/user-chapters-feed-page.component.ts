@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
-import {filter, map, switchMap, takeWhile, tap, withLatestFrom} from "rxjs/operators";
+import {exhaustMap, filter, map, switchMap, takeWhile, tap, withLatestFrom} from "rxjs/operators";
 import {ChaptersFeedService} from "src/app/manga/chapters-feed/chapters-feed.service";
 import {InfiniteScrollService} from "src/app/shared/services/infinite-scroll.service";
 import {concat, Observable, ReplaySubject} from "rxjs";
@@ -39,7 +39,7 @@ export class UserChaptersFeedPageComponent {
         });
         const infiniteScrollRequest$ = this._scroll.onScrollToBottom({distance: 200}).pipe(
             withLatestFrom(cursor$),
-            switchMap(([_, cursor]) => this._chaptersFeedService.userChapters({
+            exhaustMap(([_, cursor]) => this._chaptersFeedService.userChapters({
                 first: this.PAGE_SIZE,
                 username,
                 after: cursor,
