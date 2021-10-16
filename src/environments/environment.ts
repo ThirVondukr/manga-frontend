@@ -4,8 +4,9 @@
 
 export const environment = {
     production: false,
-    backendUrl: "http://192.168.0.150:8000",
-    cdnUrl: "http://192.168.0.150:8000/static",
+    backendUrl: "http://localhost:8000",
+    graphqlUrl: "http://localhost:8000/graphql",
+    cdnUrl: "http://localhost:8000/static",
 };
 
 /*
