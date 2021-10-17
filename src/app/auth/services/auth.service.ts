@@ -8,6 +8,7 @@ import {HttpClient} from "@angular/common/http";
 import {UserRoutingService} from "src/app/users/services/user-routing.service";
 import {Apollo} from "apollo-angular";
 import {LocalStorageJWTService} from "src/app/auth/services/local-storage-jwt.service";
+import {UserCreate} from "src/app/auth/models/UserCreate";
 
 
 @Injectable({
@@ -69,6 +70,10 @@ export class AuthService {
                 }),
                 mergeMap(() => this.getCurrentUser())
             )
+    }
+
+    public createAccount(user: UserCreate) {
+        return this._httpClient.post<User>("api/users", user);
     }
 
 

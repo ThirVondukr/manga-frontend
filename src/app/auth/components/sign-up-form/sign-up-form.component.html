@@ -3,13 +3,21 @@
     <app-input-wrapper>
         <input app-input formControlName="username" type="text"/>
     </app-input-wrapper>
+
+    <p class="text-base">Email:</p>
+    <app-input-wrapper>
+        <input app-input formControlName="email" type="email"/>
+    </app-input-wrapper>
+
     <p class="text-base">Password:</p>
     <app-input-wrapper>
         <input app-input formControlName="password" type="password">
     </app-input-wrapper>
+
     <p class="text-base">Confirm Password:</p>
     <app-input-wrapper>
         <input app-input formControlName="passwordConfirm" type="password">
     </app-input-wrapper>
+
     <button app-button>REGISTER</button>
 </form>
