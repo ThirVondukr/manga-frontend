@@ -8,17 +8,17 @@
 // ====================================================
 
 export interface GetUserProfile_getUserByUsername {
-  __typename: "User";
-  id: any;
-  avatarUrl: string;
-  username: string;
-  joinedAt: any;
+    __typename: "User";
+    id: any;
+    avatarUrl: string;
+    username: string;
+    joinedAt: any;
 }
 
 export interface GetUserProfile {
-  getUserByUsername: GetUserProfile_getUserByUsername | null;
+    getUserByUsername: GetUserProfile_getUserByUsername | null;
 }
 
 export interface GetUserProfileVariables {
-  username: string;
+    username: string;
 }

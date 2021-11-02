@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {BehaviorSubject, Observable, ReplaySubject} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {map, shareReplay, skip, switchMap} from "rxjs/operators";
+import {map, shareReplay, switchMap} from "rxjs/operators";
 
 
 type Translation = { [key: string]: Translation | string };

@@ -1,9 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Apollo} from "apollo-angular";
-import {
-    UserMangaFollows,
-    UserMangaFollowsVariables
-} from "src/gql/generated/UserMangaFollows";
+import {UserMangaFollows, UserMangaFollowsVariables} from "src/gql/generated/UserMangaFollows";
 import {GET_USER_MANGA_FOLLOWS_QUERY} from "src/gql/queries/user-manga-follows.query";
 
 

@@ -8,19 +8,19 @@
 // ====================================================
 
 export interface GetPopularManga_popularManga_cover {
-  __typename: "MangaArt";
-  id: any;
-  imageUrl: string;
+    __typename: "MangaArt";
+    id: any;
+    imageUrl: string;
 }
 
 export interface GetPopularManga_popularManga {
-  __typename: "Manga";
-  id: any;
-  likesCount: number;
-  title: string;
-  cover: GetPopularManga_popularManga_cover | null;
+    __typename: "Manga";
+    id: any;
+    likesCount: number;
+    title: string;
+    cover: GetPopularManga_popularManga_cover | null;
 }
 
 export interface GetPopularManga {
-  popularManga: GetPopularManga_popularManga[];
+    popularManga: GetPopularManga_popularManga[];
 }

@@ -8,8 +8,8 @@
 //==============================================================
 
 export interface Pagination {
-  page?: number | null;
-  pageSize?: number | null;
+    page?: number | null;
+    pageSize?: number | null;
 }
 
 //==============================================================
