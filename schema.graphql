@@ -43,6 +43,7 @@ type MangaChapter {
     manga: Manga!
     mangaId: UUID!
     number: String!
+    pages: [MangaPageType!]!
     publishedAt: DateTime!
     title: String
     updatedAt: DateTime!
@@ -76,6 +77,12 @@ type MangaPagePagination {
     pageInfo: PagePaginationPageInfo!
 }
 
+type MangaPageType {
+    chapterId: UUID!
+    id: Int!
+    imageUrl: String!
+}
+
 type Mutation {
     setMangaLiked(liked: Boolean! = true, mangaId: UUID!): LikeMangaResponse!
 }
@@ -103,6 +110,7 @@ type PagePaginationPageInfo {
 }
 
 type Root {
+    getChapterById(chapterId: UUID!): MangaChapter!
     getMangaById(mangaId: UUID!): Manga
     getMangaByTitleSlug(titleSlug: String!): Manga
     getUserById(userId: UUID!): User
