@@ -14,6 +14,7 @@
 
     &:disabled {
         @include colors.disabled;
+        cursor: inherit;
     }
 }
 

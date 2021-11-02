@@ -2,7 +2,7 @@
 <div class="manga-info">
     <p class="text-base title">{{manga.title}}</p>
     <p class="text-base stars">
-        <app-manga-star [liked]="true" [mangaId]="manga.id"></app-manga-star>
+        <app-manga-star [liked]="manga.isLikedByViewer" [mangaId]="manga.id"></app-manga-star>
         {{manga.likesCount}}
     </p>
 </div>

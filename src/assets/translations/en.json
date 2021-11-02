@@ -1,0 +1,11 @@
+{
+    "errorCodes": {
+        "USERNAME_IS_TAKEN": "This username is taken",
+        "EMAIL_IS_TAKEN": "This email is taken"
+    },
+    "formErrors": {
+        "required": "Field is required",
+        "email": "Field should be a valid email",
+        "minlength": "Field must have minimum length of ${requiredLength}, current: ${actualLength}"
+    }
+}

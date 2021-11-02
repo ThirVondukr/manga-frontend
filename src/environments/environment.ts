@@ -5,7 +5,7 @@
 export const environment = {
     production: false,
     backendUrl: "http://localhost:8000/api",
-    graphqlUrl: "http://localhost:8000/graphql",
+    graphqlUrl: "http://localhost:8000/graphql/",
     cdnUrl: "http://localhost:8000/static",
 };
 

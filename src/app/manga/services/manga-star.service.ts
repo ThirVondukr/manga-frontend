@@ -38,8 +38,8 @@ export class MangaStarService {
                 manga: {
                     __typename: "Manga",
                     id: mangaFragment.id,
-                    isLikedByViewer: mangaFragment.isLikedByViewer,
-                    likesCount: mangaFragment.likesCount,
+                    isLikedByViewer: variables.liked,
+                    likesCount: variables.liked ? mangaFragment.likesCount + 1 : mangaFragment.likesCount - 1,
                 }
             }
         } : undefined;

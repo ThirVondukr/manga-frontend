@@ -8,6 +8,7 @@ export const MangaHomeQuery = gql`
             likesCount
             title
             titleSlug
+            isLikedByViewer
             cover {
                 id
                 imageUrl

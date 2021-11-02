@@ -61,11 +61,11 @@ export class AuthService {
         formData.append("grant_type", "password");
 
         return this._httpClient
-            .post<TokenResponse>(`api/auth/token`, formData)
+            .post<TokenResponse>(`api/auth/token/`, formData)
             .pipe(
                 tap(async response => {
-                    this._jwtToken$.next(response.access_token);
-                    this._tokenStorage.token = response.access_token;
+                    this._jwtToken$.next(response.accessToken);
+                    this._tokenStorage.token = response.accessToken;
                     await this._apollo.client.resetStore();
                 }),
                 mergeMap(() => this.getCurrentUser())
@@ -73,12 +73,12 @@ export class AuthService {
     }
 
     public createAccount(user: UserCreate) {
-        return this._httpClient.post<User>("api/users", user);
+        return this._httpClient.post<User>("api/users/", user);
     }
 
 
     private getCurrentUser(): Observable<User> {
-        return this._httpClient.get<User>(`api/users/me`)
+        return this._httpClient.get<User>(`api/users/me/`)
             .pipe(tap(user => this._user$.next(user)));
     }
 }

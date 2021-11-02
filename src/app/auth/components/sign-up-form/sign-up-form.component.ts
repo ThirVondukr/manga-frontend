@@ -42,7 +42,7 @@ export class SignUpFormComponent implements OnDestroy {
                 username: form.username,
                 password: form.password,
             })),
-            tap(async user  => await this._router.navigate(this._usersRouter.userProfile(user))),
+            tap(async user => await this._router.navigate(this._usersRouter.userProfile(user))),
             takeUntil(this._unsub$),
         ).subscribe();
     }

@@ -19,6 +19,7 @@ export interface MangaHome_popularManga {
     likesCount: number;
     title: string;
     titleSlug: string;
+    isLikedByViewer: boolean;
     cover: MangaHome_popularManga_cover | null;
 }
 
