@@ -1,0 +1,16 @@
+@use "src/styles/breakpoints" as bp;
+
+:host {
+    display: block;
+    margin: 0 auto;
+    max-width: bp.$md;
+    padding: 1.5rem;
+
+    @include bp.sm {
+        padding: 3rem;
+    }
+
+    @include bp.md {
+        padding: 4rem;
+    }
+}

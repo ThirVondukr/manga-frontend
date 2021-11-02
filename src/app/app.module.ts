@@ -10,11 +10,13 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {GraphQLModule} from "./graphql.module";
 import {ApiRequestInterceptor} from "src/app/core/api-request.interceptor";
 import {CoreModule} from "src/app/core/core.module";
+import {MainContainerComponent} from "src/app/components/main-container/main-container.component";
 
 
 @NgModule({
     declarations: [
         AppComponent,
+        MainContainerComponent,
     ],
     imports: [
         AppRoutingModule,

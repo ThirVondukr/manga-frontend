@@ -2,6 +2,7 @@
 @use "src/styles/breakpoints" as bp;
 
 :host {
+    min-height: 100vh;
     max-width: 100vw;
     display: grid;
     grid-template-areas:
@@ -20,20 +21,6 @@ app-header {
 }
 
 .container-wrapper {
+    min-height: 100%;
     grid-area: container;
-    align-self: start;
-}
-
-.container {
-    margin: 0 auto;
-    max-width: bp.$md;
-    padding: 1.5rem;
-
-    @include bp.sm {
-        padding: 3rem;
-    }
-
-    @include bp.md {
-        padding: 4rem;
-    }
 }
