@@ -29,7 +29,7 @@ export class JWTToken<Claims = {}> implements IJwtToken<Claims> {
     }
 
     static fromString<Claims extends IJWTTokenPayload>(string: string): IJwtToken<Claims> {
-        const [headerRaw, payloadRaw, _] = string.split(".");
+        const [headerRaw, payloadRaw] = string.split('.');
         const header: IJWTTokenHeader = JSON.parse(atob(headerRaw));
         const payload: IJWTTokenPayload<Claims> = JSON.parse(atob(payloadRaw));
         return new this(header, payload, string);

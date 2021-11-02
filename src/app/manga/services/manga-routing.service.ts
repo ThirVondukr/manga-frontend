@@ -13,6 +13,6 @@ export class MangaRoutingService {
     }
 
     public chapterPage(titleSlug: string, chapterId: string): any[] {
-        return ["/manga", "title", titleSlug, "chapter", chapterId];
+        return ["/reader", titleSlug, "chapter", chapterId];
     }
 }

@@ -2,16 +2,18 @@ import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 
 import {MangaReaderRoutingModule} from "./manga-reader-routing.module";
-import {MangaReaderComponent} from "./manga-reader/manga-reader.component";
+import {ReaderComponent} from "./components";
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
     declarations: [
-        MangaReaderComponent
+        ReaderComponent
     ],
     imports: [
         CommonModule,
-        MangaReaderRoutingModule
+        MangaReaderRoutingModule,
+        SharedModule
     ]
 })
 export class MangaReaderModule {

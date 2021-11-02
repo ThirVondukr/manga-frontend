@@ -1,11 +1,10 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
-import {MangaReaderComponent} from "src/app/manga-reader/manga-reader/manga-reader.component";
-
+import {ReaderComponent} from "./components";
 
 
 const routes: Routes = [
-    {path: ":titleSlug/chapter/:chapterId", component: MangaReaderComponent}
+    {path: ":titleSlug/chapter/:chapterId", component: ReaderComponent}
 ];
 
 @NgModule({
