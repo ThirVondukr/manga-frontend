@@ -1,0 +1,52 @@
+@use "src/styles/mixins";
+@use "src/styles/breakpoints" as bp;
+
+:host {
+    display: grid;
+    grid-gap: 4rem;
+    grid-template-areas: "manga" "chapter-list";
+}
+
+.manga-container {
+    grid-area: manga;
+    display: grid;
+    grid-template-areas: "cover" "info";
+    place-items: start start;
+    grid-gap: 3rem;
+
+    @include bp.sm {
+        grid-template-areas: "cover info";
+        grid-template-columns: auto 1fr;
+    }
+}
+
+.manga-info-container {
+    display: flex;
+    flex-flow: column nowrap;
+
+    & > *:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+}
+
+.cover {
+    grid-area: cover;
+    width: 100%;
+    @include bp.sm {
+        max-width: 300px;
+    }
+    @include mixins.rounded(0.5);
+
+}
+
+.title {
+    @include mixins.text(2.5rem);
+    grid-area: title;
+    display: flex;
+    align-items: center;
+    grid-gap: 0.25rem;
+}
+
+app-chapter-list {
+    grid-area: chapter-list;
+}

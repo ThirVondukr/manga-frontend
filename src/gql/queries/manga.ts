@@ -6,6 +6,7 @@ export const GET_MANGA_PAGE_QUERY = gql`
         getMangaByTitleSlug(titleSlug: $titleSlug) {
             id
             title
+            titleSlug
             isLikedByViewer
             cover {
                 id

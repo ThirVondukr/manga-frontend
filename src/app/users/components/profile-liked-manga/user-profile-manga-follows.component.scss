@@ -1,5 +1,5 @@
-@use "../../../../styles/atomic/text";
-@use "../../../../styles/breakpoints" as bp;
+@use "src/styles/atomic/text";
+@use "src/styles/breakpoints" as bp;
 
 :host {
     display: grid;

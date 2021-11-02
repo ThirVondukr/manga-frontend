@@ -9,7 +9,7 @@ export class MangaRoutingService {
     public readonly FEED = ["/manga", "feed"];
 
     public mangaDetailsPage(titleSlug: string): any[] {
-        return ["/manga", "title", titleSlug];
+        return ["/manga", titleSlug];
     }
 
     public chapterPage(titleSlug: string, chapterId: string): any[] {

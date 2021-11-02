@@ -13,6 +13,11 @@ const routes: Route[] = [
         loadChildren: () => import("src/app/manga/manga.module").then(m => m.MangaModule)
     },
     {
+        path: "reader",
+        loadChildren: () => import("src/app/manga-reader/manga-reader-routing.module")
+            .then(m => m.MangaReaderRoutingModule)
+    },
+    {
         path: "auth",
         loadChildren: () => import("src/app/auth/auth.module").then(m => m.AuthModule)
     },

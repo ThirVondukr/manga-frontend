@@ -8,8 +8,8 @@
 // ====================================================
 
 export interface MangaFragment {
-    __typename: "Manga";
-    id: any;
-    isLikedByViewer: boolean;
-    likesCount: number;
+  __typename: "Manga";
+  id: any;
+  isLikedByViewer: boolean;
+  likesCount: number;
 }
