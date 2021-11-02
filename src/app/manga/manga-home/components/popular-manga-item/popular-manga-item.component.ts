@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input} from "@angular/core";
-import {MangaHome_popularManga} from "src/app/graphql/__generated__/MangaHome";
+import {MangaHome_popularManga} from "src/gql/generated/MangaHome";
 
 
 @Component({

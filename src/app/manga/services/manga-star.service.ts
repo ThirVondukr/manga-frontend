@@ -1,9 +1,9 @@
 import {Injectable} from "@angular/core";
 import {Apollo, gql} from "apollo-angular";
-import {STAR_MANGA_MUTATION} from "src/app/manga/graphql/mutations";
-import {StarManga, StarMangaVariables} from "src/app/manga/graphql/__generated__/StarManga";
+import {LIKE_MANGA_MUTATION} from "src/gql/mutations/manga-like";
+import {StarManga, StarMangaVariables} from "src/gql/generated/StarManga";
 import {FetchResult} from "@apollo/client/core";
-import {MangaFragment} from "src/app/manga/services/__generated__/MangaFragment";
+import {MangaFragment} from "src/gql/generated/MangaFragment";
 import {AuthService} from "src/app/auth/services/auth.service";
 
 
@@ -45,7 +45,7 @@ export class MangaStarService {
         } : undefined;
 
         return this._apollo.mutate({
-            mutation: STAR_MANGA_MUTATION,
+            mutation: LIKE_MANGA_MUTATION,
             variables,
             optimisticResponse,
             update: (cache, result: FetchResult<StarManga>) => {

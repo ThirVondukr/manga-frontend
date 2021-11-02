@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {filter, switchMap, tap} from "rxjs/operators";
 import {UserService} from "src/app/users/services/user.service";
-import {GetUserProfile_getUserByUsername} from "src/app/graphql/__generated__/GetUserProfile";
+import {GetUserProfile_getUserByUsername} from "src/gql/generated/GetUserProfile";
 
 
 @Component({

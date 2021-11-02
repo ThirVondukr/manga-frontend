@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {filter, map, shareReplay, switchMap} from "rxjs/operators";
 import {Observable} from "rxjs";
-import {GetMangaPage_getMangaByTitleSlug,} from "src/app/manga/manga-details-page/graphql/__generated__/GetMangaPage";
+import {GetMangaPage_getMangaByTitleSlug,} from "src/gql/generated/GetMangaPage";
 import {MangaService} from "src/app/manga/services/manga.service";
 
 

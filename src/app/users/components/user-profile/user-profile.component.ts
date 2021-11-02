@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input} from "@angular/core";
-import {GetUserProfile_getUserByUsername} from "src/app/graphql/__generated__/GetUserProfile";
+import {GetUserProfile_getUserByUsername} from "src/gql/generated/GetUserProfile";
 
 
 @Component({

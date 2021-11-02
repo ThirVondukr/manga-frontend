@@ -3,8 +3,8 @@ import {Apollo} from "apollo-angular";
 import {
     UserMangaFollows,
     UserMangaFollowsVariables
-} from "src/app/users/graphql/__generated__/UserMangaFollows";
-import {GET_USER_MANGA_FOLLOWS_QUERY} from "src/app/users/graphql/get-user-manga-follows.query";
+} from "src/gql/generated/UserMangaFollows";
+import {GET_USER_MANGA_FOLLOWS_QUERY} from "src/gql/queries/user-manga-follows.query";
 
 
 @Injectable({

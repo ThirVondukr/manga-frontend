@@ -1,15 +1,15 @@
 import {ChangeDetectionStrategy, Component, Input} from "@angular/core";
-import {GetMangaPage_getMangaByTitleSlug} from "src/app/manga/manga-details-page/graphql/__generated__/GetMangaPage";
+import {GetMangaPage_getMangaByTitleSlug} from "src/gql/generated/GetMangaPage";
 import {Observable} from "rxjs";
 import {map, switchMap} from "rxjs/operators";
 import {BreakpointObserverService} from "src/app/shared/modules/breakpoint/breakpoint-observer.service";
 import {
     GetMangaChapters_getMangaById,
     GetMangaChapters_getMangaById_chapters_items
-} from "src/app/manga/manga-details-page/graphql/__generated__/GetMangaChapters";
+} from "src/gql/generated/GetMangaChapters";
 import {MangaService} from "src/app/manga/services/manga.service";
 import {PaginatedListBase} from "src/app/shared/paginated-list.base";
-import {Pagination} from "__generated__/globalTypes";
+import {Pagination} from "src/gql/generated/globalTypes";
 
 
 @Component({

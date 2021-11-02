@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, Input, OnInit} from "@angular/core";
 import {
     GetRecentChapters_recentChapters_edges_node,
     GetRecentChapters_recentChapters_edges_node_manga
-} from "src/app/graphql/__generated__/GetRecentChapters";
+} from "src/gql/generated/GetRecentChapters";
 import {MangaRoutingService} from "src/app/manga/services/manga-routing.service";
 
 

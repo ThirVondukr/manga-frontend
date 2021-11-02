@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {BehaviorSubject, combineLatest, Observable} from "rxjs";
 import {map, shareReplay} from "rxjs/operators";
-import {Pagination} from "__generated__/globalTypes";
+import {Pagination} from "src/gql/generated/globalTypes";
 
 
 export interface PagePaginationPageInfo {

@@ -7,7 +7,7 @@
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "apollo-watch": "apollo codegen:generate --localSchemaFile=schema.graphql --target=typescript --tagName=gql --watch"
+        "apollo-watch": "apollo codegen:generate --localSchemaFile=schema.graphql --target=typescript --tagName=gql --outputFlat  --watch src/gql/generated"
     },
     "private": true,
     "dependencies": {

@@ -2,21 +2,13 @@ import {Injectable} from "@angular/core";
 import {Apollo} from "apollo-angular";
 import {map, tap} from "rxjs/operators";
 import {Observable} from "rxjs";
-import {MangaHomeQuery} from "src/app/graphql/MangaHomeQuery";
-import {MangaHome} from "src/app/graphql/__generated__/MangaHome";
-import {
-    GetMangaPage,
-    GetMangaPageVariables
-} from "src/app/manga/manga-details-page/graphql/__generated__/GetMangaPage";
-import {
-    GET_MANGA_CHAPTERS_QUERY,
-    GET_MANGA_PAGE_QUERY
-} from "src/app/manga/manga-details-page/graphql/queries";
-import {
-    GetMangaChapters,
-    GetMangaChaptersVariables
-} from "src/app/manga/manga-details-page/graphql/__generated__/GetMangaChapters";
+import {MangaHomeQuery} from "src/gql/queries/manga-home";
+import {MangaHome} from "src/gql/generated/MangaHome";
+import {GetMangaPage, GetMangaPageVariables} from "src/gql/generated/GetMangaPage";
+import {GetMangaChapters, GetMangaChaptersVariables} from "src/gql/generated/GetMangaChapters";
 import {Router} from "@angular/router";
+import {GET_MANGA_PAGE_QUERY} from "src/gql/queries/manga";
+import {GET_MANGA_CHAPTERS_QUERY} from "src/gql/queries/manga-chapters";
 
 
 @Injectable({

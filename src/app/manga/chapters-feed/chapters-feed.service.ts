@@ -1,22 +1,23 @@
 import {Injectable} from "@angular/core";
 import {Apollo} from "apollo-angular";
-import {GetRecentChaptersQuery} from "src/app/graphql/GetRecentChaptersQuery";
+
 import {
     GetRecentChapters,
     GetRecentChapters_recentChapters_edges as ChapterEdge,
     GetRecentChapters_recentChapters_edges_node as RecentChapter,
     GetRecentChaptersVariables
-} from "src/app/graphql/__generated__/GetRecentChapters";
+} from "src/gql/generated/GetRecentChapters";
 import {
     UserChaptersFeed,
     UserChaptersFeed_getUserByUsername,
     UserChaptersFeedVariables
-} from "src/app/graphql/__generated__/UserChaptersFeed";
-import {UserChaptersFeedQuery} from "src/app/graphql/UserChaptersFeed";
+} from "src/gql/generated/UserChaptersFeed";
 import {filter, map, scan, tap} from "rxjs/operators";
 import {Router} from "@angular/router";
 import {Observable} from "rxjs";
 import {groupBy} from "src/app/shared/lib/group-by";
+import {UserChaptersFeedQuery} from "src/gql/queries/user-chapters-feed";
+import {GetRecentChaptersQuery} from "src/gql/queries/recent-chapters";
 
 
 @Injectable({providedIn: "root"})

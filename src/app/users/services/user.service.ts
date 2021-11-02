@@ -1,8 +1,9 @@
 import {Injectable} from "@angular/core";
 import {map} from "rxjs/operators";
 import {Apollo} from "apollo-angular";
-import {GET_USER_PROFILE_QUERY} from "src/app/graphql/GetUserProfileQuery";
-import {GetUserProfile} from "src/app/graphql/__generated__/GetUserProfile";
+
+import {GetUserProfile} from "src/gql/generated/GetUserProfile";
+import {GET_USER_PROFILE_QUERY} from "src/gql/queries/user-profile";
 
 
 @Injectable({

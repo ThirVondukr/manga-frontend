@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input} from "@angular/core";
-import {GetRecentChapters_recentChapters_edges_node} from "src/app/graphql/__generated__/GetRecentChapters";
+import {GetRecentChapters_recentChapters_edges_node} from "src/gql/generated/GetRecentChapters";
 
 
 @Component({
