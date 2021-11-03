@@ -10,7 +10,7 @@
 export interface GetMangaChapters_getMangaById_chapters_items {
   __typename: "MangaChapter";
   id: any;
-  number: string;
+  number: number;
   publishedAt: any;
   title: string | null;
   language: string;

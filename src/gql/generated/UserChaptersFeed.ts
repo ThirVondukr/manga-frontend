@@ -25,7 +25,7 @@ export interface UserChaptersFeed_getUserByUsername_chaptersFeed_edges_node {
   __typename: "MangaChapter";
   manga: UserChaptersFeed_getUserByUsername_chaptersFeed_edges_node_manga;
   id: any;
-  number: string;
+  number: number;
   publishedAt: any;
   title: string | null;
 }

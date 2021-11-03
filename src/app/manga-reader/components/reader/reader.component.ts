@@ -1,4 +1,7 @@
-import {ChangeDetectionStrategy, Component, OnInit} from "@angular/core";
+import {ChangeDetectionStrategy, Component} from "@angular/core";
+import {Observable} from "rxjs";
+import {map} from "rxjs/operators";
+import {PagesService} from "src/app/manga-reader/services/pages.service";
 
 
 @Component({
@@ -7,20 +10,18 @@ import {ChangeDetectionStrategy, Component, OnInit} from "@angular/core";
     styleUrls: ["./reader.component.scss"],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReaderComponent implements OnInit {
+export class ReaderComponent {
 
-    public images = [
-        "http://localhost:8000/static/manga/made-in-abyss/1/1/1.jpg",
-        "http://localhost:8000/static/manga/made-in-abyss/1/1/2.jpg",
-        "http://localhost:8000/static/manga/made-in-abyss/1/1/3.jpg",
-        "http://localhost:8000/static/manga/made-in-abyss/1/1/4.jpg",
-        "http://localhost:8000/static/manga/made-in-abyss/1/1/5.jpg",
-    ]
+    public images$: Observable<string[]>;
 
-    constructor() {
-    }
-
-    ngOnInit(): void {
+    constructor(
+        private readonly _pagesService: PagesService
+    ) {
+        this.images$ = this._pagesService.getChapter({
+            chapterId: "f9e1fd93-77bb-4c6c-9608-4d439b3cb132"
+        }).pipe(
+            map(r => r.getChapterById.pages.map(c => c.imageUrl))
+        );
     }
 
 }

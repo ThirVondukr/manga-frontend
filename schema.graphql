@@ -42,7 +42,8 @@ type MangaChapter {
     language: String!
     manga: Manga!
     mangaId: UUID!
-    number: String!
+    number: Int!
+    numberExtra: Int
     pages: [MangaPageType!]!
     publishedAt: DateTime!
     title: String
@@ -81,6 +82,7 @@ type MangaPageType {
     chapterId: UUID!
     id: Int!
     imageUrl: String!
+    number: Int!
 }
 
 type Mutation {

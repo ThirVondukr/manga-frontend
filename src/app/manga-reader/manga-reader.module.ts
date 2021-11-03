@@ -3,7 +3,7 @@ import {CommonModule} from "@angular/common";
 
 import {MangaReaderRoutingModule} from "./manga-reader-routing.module";
 import {ReaderComponent} from "./components";
-import {SharedModule} from "../shared/shared.module";
+import {SharedModule} from "src/app/shared/shared.module";
 
 
 @NgModule({
@@ -12,8 +12,8 @@ import {SharedModule} from "../shared/shared.module";
     ],
     imports: [
         CommonModule,
+        SharedModule,
         MangaReaderRoutingModule,
-        SharedModule
     ]
 })
 export class MangaReaderModule {

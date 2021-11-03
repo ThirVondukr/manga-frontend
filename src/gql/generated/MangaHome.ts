@@ -40,7 +40,7 @@ export interface MangaHome_recentChapters_edges_node_manga {
 export interface MangaHome_recentChapters_edges_node {
   __typename: "MangaChapter";
   id: any;
-  number: string;
+  number: number;
   title: string | null;
   publishedAt: any;
   manga: MangaHome_recentChapters_edges_node_manga;
