@@ -7,6 +7,7 @@ import {ChapterGroupItem} from "src/app/manga-chapters-feed/components/chapter-g
 import {RecentChaptersFeedPageComponent} from "src/app/manga-chapters-feed/components/recent-chapters-feed-page/recent-chapters-feed-page.component";
 import {UserChaptersFeedPageComponent} from "src/app/manga-chapters-feed/components/user-chapters-feed-page/user-chapters-feed-page.component";
 import {RecentChaptersFeedRoutingModule} from "src/app/manga-chapters-feed/recent-chapters-feed-routing.module";
+import {MangaModule} from "src/app/manga/manga.module";
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import {RecentChaptersFeedRoutingModule} from "src/app/manga-chapters-feed/recen
         CommonModule,
         RecentChaptersFeedRoutingModule,
         SharedModule,
+        MangaModule,
     ]
 })
 export class RecentChaptersFeedModule {

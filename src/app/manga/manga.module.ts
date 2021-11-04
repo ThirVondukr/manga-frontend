@@ -6,6 +6,7 @@ import {MangaCoverComponent} from "src/app/manga/components/manga-cover/manga-co
 import {MangaStarComponent} from "src/app/manga/components/manga-star/manga-star.component";
 import {SharedModule} from "src/app/shared/shared.module";
 import {MangaInfoListComponent} from "src/app/manga/components/manga-info-list/manga-info-list.component";
+import { CdnImageDirective } from './directives/cdn-image.directive';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import {MangaInfoListComponent} from "src/app/manga/components/manga-info-list/m
         MangaInfoListComponent,
         MangaCoverComponent,
         MangaStarComponent,
+        CdnImageDirective,
     ],
     imports: [
         CommonModule,
@@ -23,6 +25,7 @@ import {MangaInfoListComponent} from "src/app/manga/components/manga-info-list/m
         MangaCoverComponent,
         MangaStarComponent,
         MangaInfoListComponent,
+        CdnImageDirective,
     ]
 })
 export class MangaModule {
