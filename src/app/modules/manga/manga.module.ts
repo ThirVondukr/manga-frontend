@@ -1,5 +1,4 @@
 import {NgModule} from "@angular/core";
-import {CommonModule} from "@angular/common";
 import {MangaRoutingModule} from "./manga-routing.module";
 import {
     ChapterGroupItem,
@@ -14,9 +13,8 @@ import {
     RecentChaptersFeedPageComponent,
     UserChaptersFeedPageComponent
 } from "./components";
-import {SharedModule} from "src/app/shared/shared.module";
-import {TimeAgoModule} from "src/app/shared/modules/time-ago/time-ago.module";
 import {MangaSharedModule} from "src/app/modules/manga-shared/manga-shared.module";
+import {SharedModule} from "src/app/modules/shared/shared.module";
 
 
 @NgModule({
@@ -34,10 +32,8 @@ import {MangaSharedModule} from "src/app/modules/manga-shared/manga-shared.modul
         UserChaptersFeedPageComponent
     ],
     imports: [
-        CommonModule,
         MangaRoutingModule,
         SharedModule,
-        TimeAgoModule,
         MangaSharedModule
     ]
 })

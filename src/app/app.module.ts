@@ -5,29 +5,37 @@ import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from "./app.component";
 import {UsersModule} from "src/app/modules/users/users.module";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {TokenInterceptor} from "src/app/auth/interceptors/token.interceptor";
+import {TokenInterceptor} from "src/app/modules/auth/interceptors/token.interceptor";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {GraphQLModule} from "./graphql.module";
-import {ApiRequestInterceptor} from "src/app/core/api-request.interceptor";
-import {CoreModule} from "src/app/core/core.module";
-import {MainContainerComponent} from "src/app/components/main-container/main-container.component";
-import {NotFoundPageComponent} from "src/app/components";
+import {
+    HeaderComponent,
+    HeaderUserInfoComponent,
+    MainContainerComponent,
+    NotFoundPageComponent,
+    SidenavComponent
+} from "./components";
+import {ApiRequestInterceptor} from "src/app/core/interceptors";
+import {SharedModule} from "src/app/modules/shared/shared.module";
 
 
 @NgModule({
     declarations: [
         AppComponent,
+        HeaderComponent,
+        HeaderUserInfoComponent,
         MainContainerComponent,
-        NotFoundPageComponent
+        NotFoundPageComponent,
+        SidenavComponent
     ],
     imports: [
         AppRoutingModule,
-        CoreModule,
         BrowserAnimationsModule,
         BrowserModule,
         GraphQLModule,
         HttpClientModule,
         UsersModule,
+        SharedModule
     ],
     providers: [
         {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},

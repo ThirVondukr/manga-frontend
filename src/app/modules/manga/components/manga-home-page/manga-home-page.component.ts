@@ -1,7 +1,8 @@
 import {ChangeDetectionStrategy, Component} from "@angular/core";
 import {map} from "rxjs/operators";
 
-import {MangaRoutingService, MangaService} from "../../services";
+import {MangaService} from "../../services";
+import {MangaRoutingService} from "src/app/routing";
 
 
 @Component({

@@ -1,4 +1,4 @@
-<!--<app-manga-cover [manga]="manga"></app-manga-cover>-->
+<img appCdnImage [src]="manga.cover!.imageUrl" [alt]="manga.title">
 <div class="manga-info">
     <p class="text-base title">{{manga.title}}</p>
     <p class="text-base stars">

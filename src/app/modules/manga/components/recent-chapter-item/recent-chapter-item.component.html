@@ -1,4 +1,5 @@
-<!--<app-manga-cover [manga]="chapter.manga"></app-manga-cover>-->
+<img appCdnImage [src]="chapter.manga.cover?.imageUrl" [alt]="chapter.manga.title"/>
+
 <div *ngIf="chapter.manga as manga" class="recent-chapter-info">
     <a [routerLink]="mangaRouting.mangaDetailsPage(manga.titleSlug)" class="text-md text-link">
         Chapter {{chapter.number}}

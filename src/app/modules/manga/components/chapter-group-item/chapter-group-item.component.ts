@@ -4,8 +4,7 @@ import {
     GetRecentChapters_recentChapters_edges_node,
     GetRecentChapters_recentChapters_edges_node_manga
 } from "src/gql/generated/GetRecentChapters";
-
-import {MangaRoutingService} from "../../services";
+import {MangaRoutingService} from "src/app/routing";
 
 
 @Component({

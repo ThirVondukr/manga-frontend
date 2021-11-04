@@ -8,11 +8,12 @@ import {
     GetMangaChapters_getMangaById_chapters_items
 } from "src/gql/generated/GetMangaChapters";
 
-import {BreakpointObserverService} from "src/app/shared/modules/breakpoint/breakpoint-observer.service";
-import {PaginatedListBase} from "src/app/shared/paginated-list.base";
 import {Pagination} from "src/gql/generated/globalTypes";
 
-import {MangaRoutingService, MangaService} from "../../services";
+import {MangaService} from "../../services";
+import {PaginatedListBase} from "src/app/modules/shared/models";
+import {MangaRoutingService} from "src/app/routing";
+import {BreakpointObserverService} from "src/app/modules/shared/services";
 
 
 @Component({

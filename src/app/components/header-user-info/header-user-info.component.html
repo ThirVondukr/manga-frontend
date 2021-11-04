@@ -1,0 +1,7 @@
+<p class="username">{{user.username}}</p>
+<img
+    [routerLink]="userRouting.userProfile(user.username)"
+    [user]="user"
+    app-user-avatar
+    class="avatar"
+>

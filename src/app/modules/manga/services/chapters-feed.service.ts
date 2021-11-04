@@ -18,7 +18,7 @@ import {
 import {UserChaptersFeedQuery} from "src/gql/queries/user-chapters-feed";
 import {GetRecentChaptersQuery} from "src/gql/queries/recent-chapters";
 
-import {groupBy} from "src/app/shared/lib/group-by";
+import {groupBy} from "src/app/modules/shared/helpers/group-by";
 
 
 @Injectable({providedIn: "root"})

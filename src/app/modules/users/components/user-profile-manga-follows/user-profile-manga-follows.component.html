@@ -1,5 +1,5 @@
 <div *ngFor="let manga of followedManga$ | async" class="manga-follow-item">
-<!--    <app-manga-cover [manga]="manga" cover></app-manga-cover>-->
+    <img appCdnImage [src]="manga.cover?.imageUrl" [alt]="manga.title" />
     <app-manga-info-list>
         <p class="mange-title">{{manga.title}}</p>
     </app-manga-info-list>

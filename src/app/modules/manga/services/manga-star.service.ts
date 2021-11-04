@@ -6,7 +6,7 @@ import {LIKE_MANGA_MUTATION} from "src/gql/mutations/manga-like";
 import {StarManga, StarMangaVariables} from "src/gql/generated/StarManga";
 import {MangaFragment} from "src/gql/generated/MangaFragment";
 
-import {AuthService} from "src/app/auth/services/auth.service";
+import {AuthService} from "src/app/modules/auth/services/auth.service";
 
 
 @Injectable({

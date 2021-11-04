@@ -1,8 +1,7 @@
 import {ChangeDetectionStrategy, Component, Input} from "@angular/core";
 
 import {MangaHome_recentChapters_edges_node} from "src/gql/generated/MangaHome";
-
-import {MangaRoutingService} from "../../services";
+import {MangaRoutingService} from "src/app/routing";
 
 
 @Component({

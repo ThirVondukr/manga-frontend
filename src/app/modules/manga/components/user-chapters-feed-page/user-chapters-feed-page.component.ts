@@ -2,11 +2,8 @@ import {ChangeDetectionStrategy, Component} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {exhaustMap, filter, map, switchMap, takeWhile, tap, withLatestFrom} from "rxjs/operators";
 import {concat, Observable, ReplaySubject} from "rxjs";
-
-import {InfiniteScrollService} from "src/app/shared/services/infinite-scroll.service";
-
 import {UserChaptersFeed_getUserByUsername_chaptersFeed_edges_node} from "src/gql/generated/UserChaptersFeed";
-
+import {InfiniteScrollService} from "src/app/modules/shared/services";
 import {ChaptersFeedService} from "../../services";
 
 

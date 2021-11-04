@@ -1,10 +1,9 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
-import {UserProfilePageComponent} from "src/app/modules/users/components/user-profile-page/user-profile-page.component";
+import {UserProfilePageComponent} from "./components";
 
 
 const routes: Routes = [
-    {path: "", pathMatch: "full", redirectTo: "login"},
     {
         path: ":username/profile",
         component: UserProfilePageComponent,

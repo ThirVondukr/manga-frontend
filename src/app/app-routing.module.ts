@@ -12,7 +12,7 @@ const routes: Route[] = [
     },
     {
         path: "reader",
-        loadChildren: () => import("src/app/manga-reader/manga-reader.module").then(m => m.MangaReaderModule)
+        loadChildren: () => import("src/app/modules/manga-reader/manga-reader.module").then(m => m.MangaReaderModule)
     },
     {
         path: "",
@@ -24,7 +24,7 @@ const routes: Route[] = [
             },
             {
                 path: "auth",
-                loadChildren: () => import("src/app/auth/auth.module").then(m => m.AuthModule)
+                loadChildren: () => import("src/app/modules/auth/auth.module").then(m => m.AuthModule)
             },
             {
                 path: "users",
