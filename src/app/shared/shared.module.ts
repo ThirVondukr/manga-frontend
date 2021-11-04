@@ -10,7 +10,6 @@ import {UserDropdownComponent} from "src/app/shared/components/user-dropdown/use
 import {ClickOutsideDirective} from "src/app/shared/directives/click-outside.directive";
 import {PaginationNavComponent} from "src/app/shared/components/pagination-nav/pagination-nav.component";
 import {BreakpointObserverModule} from "src/app/shared/modules/breakpoint/breakpoint-observer.module";
-import {CdnImageComponent} from "src/app/shared/components/cdn-image/cdn-image.component";
 import {IconComponent} from "src/app/shared/components/icon/icon.component";
 import {UserAvatarComponent} from "src/app/shared/components/user-avatar/user-avatar.component";
 
@@ -24,7 +23,6 @@ import {UserAvatarComponent} from "src/app/shared/components/user-avatar/user-av
         UserDropdownComponent,
         ClickOutsideDirective,
         PaginationNavComponent,
-        CdnImageComponent,
         IconComponent,
         UserAvatarComponent,
     ],
@@ -33,7 +31,6 @@ import {UserAvatarComponent} from "src/app/shared/components/user-avatar/user-av
         InputWrapperComponent,
         ButtonComponent,
         PaginationNavComponent,
-        CdnImageComponent,
         ClickOutsideDirective,
         IconComponent,
         UserAvatarComponent,
