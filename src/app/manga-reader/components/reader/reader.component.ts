@@ -18,7 +18,7 @@ export class ReaderComponent {
         private readonly _pagesService: PagesService
     ) {
         this.images$ = this._pagesService.getChapter({
-            chapterId: "f9e1fd93-77bb-4c6c-9608-4d439b3cb132"
+            chapterId: "aaa85e4d-89a4-4ce5-8abe-5118a4f58a82"
         }).pipe(
             map(r => r.getChapterById.pages.map(c => c.imageUrl))
         );

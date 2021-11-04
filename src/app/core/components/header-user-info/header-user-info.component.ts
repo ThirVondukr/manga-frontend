@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, Input} from "@angular/core";
-import {User} from "src/app/users/models/user.interface";
+import {User} from "src/app/modules/users/models/user.interface";
 import {AuthService} from "src/app/auth/services/auth.service";
-import {UserRoutingService} from "src/app/users/services/user-routing.service";
+import {UserRoutingService} from "src/app/modules/users/services/user-routing.service";
 
 
 @Component({

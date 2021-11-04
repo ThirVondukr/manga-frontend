@@ -1,6 +1,7 @@
 import {NgModule} from "@angular/core";
 import {Route, RouterModule} from "@angular/router";
 import {MainContainerComponent} from "src/app/components/main-container/main-container.component";
+import {NotFoundPageComponent} from "src/app/components";
 
 
 const routes: Route[] = [
@@ -11,8 +12,7 @@ const routes: Route[] = [
     },
     {
         path: "reader",
-        loadChildren: () => import("src/app/manga-reader/manga-reader-routing.module")
-            .then(m => m.MangaReaderRoutingModule)
+        loadChildren: () => import("src/app/manga-reader/manga-reader.module").then(m => m.MangaReaderModule)
     },
     {
         path: "",
@@ -20,7 +20,7 @@ const routes: Route[] = [
         children: [
             {
                 path: "manga",
-                loadChildren: () => import("src/app/manga/manga.module").then(m => m.MangaModule)
+                loadChildren: () => import("src/app/modules/manga/manga.module").then(m => m.MangaModule)
             },
             {
                 path: "auth",
@@ -28,11 +28,11 @@ const routes: Route[] = [
             },
             {
                 path: "users",
-                loadChildren: () => import("src/app/users/users.module").then(m => m.UsersModule)
+                loadChildren: () => import("src/app/modules/users/users.module").then(m => m.UsersModule)
             },
             {
                 path: "not-found",
-                loadChildren: () => import("src/app/not-found-page/not-found-page.module").then(m => m.NotFoundPageModule)
+                component: NotFoundPageComponent
             },
             {
                 path: "**",

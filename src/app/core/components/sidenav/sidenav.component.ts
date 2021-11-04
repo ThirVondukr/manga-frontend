@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component} from "@angular/core";
 import {SidenavService} from "src/app/core/sidenav.service";
 import {openAnimation} from "src/app/core/components/sidenav/open.animation";
-import {MangaRoutingService} from "src/app/manga/services/manga-routing.service";
+import {MangaRoutingService} from "src/app/modules/manga/services/manga-routing.service";
 import {combineLatest, Subject} from "rxjs";
 import {map} from "rxjs/operators";
 import {

@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {AuthService} from "src/app/auth/services/auth.service";
 import {Subject} from "rxjs";
 import {switchMap, takeUntil, tap} from "rxjs/operators";
-import {UserRoutingService} from "src/app/users/services/user-routing.service";
+import {UserRoutingService} from "src/app/modules/users/services/user-routing.service";
 import {Router} from "@angular/router";
 
 

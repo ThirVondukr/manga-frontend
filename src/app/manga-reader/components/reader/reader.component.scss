@@ -9,7 +9,7 @@
     margin-left: auto;
     margin-right: auto;
     object-fit: contain;
-    @extend .fit-width;
+    @extend .fit-height;
 }
 
 .fit-both {

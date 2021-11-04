@@ -1,0 +1,8 @@
+<!--<app-manga-cover [manga]="manga"></app-manga-cover>-->
+<div class="manga-info">
+    <p class="text-base title">{{manga.title}}</p>
+    <p class="text-base stars">
+        <app-manga-star [liked]="manga.isLikedByViewer" [mangaId]="manga.id"></app-manga-star>
+        {{manga.likesCount}}
+    </p>
+</div>

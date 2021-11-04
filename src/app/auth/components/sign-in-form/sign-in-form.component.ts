@@ -3,7 +3,7 @@ import {AuthService} from "src/app/auth/services/auth.service";
 import {ReplaySubject} from "rxjs";
 import {takeUntil} from "rxjs/operators";
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {UserRoutingService} from "src/app/users/services/user-routing.service";
+import {UserRoutingService} from "src/app/modules/users/services/user-routing.service";
 import {Router} from "@angular/router";
 import {AuthRoutingService} from "src/app/auth/services/auth-routing.service";
 

@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component, HostBinding, HostListener, Input} from "@angular/core";
-import {User} from "src/app/users/models/user.interface";
+import {User} from "src/app/modules/users/models/user.interface";
 import {environment} from "src/environments/environment";
 import {CoerceBoolean} from "src/app/shared/lib/coerce-boolean";
-import {UserRoutingService} from "src/app/users/services/user-routing.service";
+import {UserRoutingService} from "src/app/modules/users/services/user-routing.service";
 import {Router} from "@angular/router";
 
 

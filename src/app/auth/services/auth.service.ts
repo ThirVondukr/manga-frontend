@@ -1,11 +1,11 @@
 import {Injectable} from "@angular/core";
 import {BehaviorSubject, Observable} from "rxjs";
-import {User} from "src/app/users/models/user.interface";
+import {User} from "src/app/modules/users/models/user.interface";
 import {map, mergeMap, tap} from "rxjs/operators";
 import {UserLogin} from "src/app/auth/models/UserLogin";
 import {TokenResponse} from "src/app/auth/models/TokenResponse";
 import {HttpClient} from "@angular/common/http";
-import {UserRoutingService} from "src/app/users/services/user-routing.service";
+import {UserRoutingService} from "src/app/modules/users/services/user-routing.service";
 import {Apollo} from "apollo-angular";
 import {LocalStorageJWTService} from "src/app/auth/services/local-storage-jwt.service";
 import {UserCreate} from "src/app/auth/models/UserCreate";
