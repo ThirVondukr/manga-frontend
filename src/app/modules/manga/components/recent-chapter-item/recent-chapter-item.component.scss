@@ -1,5 +1,4 @@
 @use "src/styles/breakpoints" as bp;
-@use "src/styles/colors";
 
 
 :host {
@@ -9,7 +8,7 @@
     grid-template-columns: 70px 1fr;
     grid-gap: 1rem;
     align-items: center;
-    background-color: colors.$background-darker
+    background-color: var(--color-background-darker)
 }
 
 .manga-cover {

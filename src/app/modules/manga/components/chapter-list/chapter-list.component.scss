@@ -1,4 +1,3 @@
-@use "src/styles/colors";
 @use "src/styles/mixins";
 
 :host {
@@ -8,7 +7,7 @@
 
 
 .header {
-    background-color: colors.$primary;
+    background-color: var(--color-primary);
     padding: 1rem 1.25rem;
     border-radius: 4px 4px 0 0;
 }

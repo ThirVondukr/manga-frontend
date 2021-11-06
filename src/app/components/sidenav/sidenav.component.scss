@@ -1,4 +1,3 @@
-@use "src/styles/colors";
 @use "src/styles/atomic/text";
 @use "src/styles/mixins";
 
@@ -14,7 +13,7 @@ $sidebar-width: 240px;
 .sidenav {
     width: $sidebar-width;
     height: 100vh;
-    background-color: colors.$background-darker;
+    background-color: var(--color-background-darker);
     box-sizing: border-box;
     overflow-x: hidden;
     padding: 1rem;
@@ -66,14 +65,14 @@ $sidebar-width: 240px;
     cursor: pointer;
     padding: 0.666rem 0.5rem;
 
-    color: colors.$text-disabled;
+    color: var(--color-text);
 
     &:hover {
-        color: colors.$text;
+        color: var(--color-text);
     }
 
     &--active {
-        background-color: colors.$primary;
-        color: colors.$text;
+        background-color: var(--color-primary);
+        color: var(--color-text);
     }
 }

@@ -1,0 +1,32 @@
+@use "sass:color";
+
+$__background: rgb(40, 40, 40);
+$__background-darker: color.scale($__background, $lightness: -40%);
+$__background-lighter: color.scale($__background, $lightness: 10%);
+$__background-alternate: color.scale($__background-darker, $lightness: 5%);
+:root {
+    --color-primary-50: #FCE4EC;
+    --color-primary-100: #F8BBD0;
+    --color-primary-200: #F48FB1;
+    --color-primary-300: #F06292;
+    --color-primary-400: #EC407A;
+    --color-primary-500: #E91E63;
+    --color-primary-600: #D81B60;
+    --color-primary-700: #C2185B;
+    --color-primary-800: #AD1457;
+    --color-primary-900: #880E4F;
+
+    --color-primary: var(--color-primary-600);
+    --color-primary-lighter: #{color.scale(#D81B60, $lightness: 10%)};
+
+    --color-disabled: #{$__background};
+    --color-disabled-background: rgb(80, 80, 80);
+
+    --color-background: #{$__background};
+    --color-background-darker: #{$__background-darker};
+    --color-background-lighter: #{$__background-lighter};
+    --color-background-alternate: #{$__background-alternate};
+
+    --color-text: white;
+    --color-text-disabled: #d9d9d9;
+}

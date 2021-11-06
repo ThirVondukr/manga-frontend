@@ -1,5 +1,4 @@
-@use "../../../../../styles/colors";
-@use "../../../../../styles/breakpoints" as bp;
+@use "src/styles/breakpoints" as bp;
 
 form {
     margin: 0 auto;
@@ -15,7 +14,7 @@ form {
     justify-self: center;
 
     & > :link, & > :visited {
-        color: colors.$primary;
+        color: var(--color-primary);
         text-decoration: none;
     }
 }

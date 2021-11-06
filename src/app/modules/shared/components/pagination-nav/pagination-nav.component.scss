@@ -1,5 +1,4 @@
 @use "src/styles/mixins";
-@use "src/styles/colors";
 
 :host {
     display: flex;
@@ -18,7 +17,7 @@
     @include mixins.padding-x(1rem);
 
     user-select: none;
-    background-color: colors.$background-lighter;
+    background-color: var(--color-background-lighter);
     border: none;
     display: flex;
     align-items: center;
@@ -34,21 +33,21 @@
     }
 
     &--active {
-        background-color: var(--active-item-background-color, colors.$primary);
-        color: var(--active-item-color, colors.$text);
+        background-color: var(--active-item-background-color, var(--color-primary));
+        color: var(--active-item-color, var(--color-text));
         border: none;
     }
 
     &:disabled {
-        @include colors.disabled;
+        @include mixins.disabled;
         cursor: default;
     }
 
     &:not(&:disabled) {
         @media (hover: hover) {
             &:hover {
-                background-color: var(--active-item-background-color, colors.$primary);
-                color: var(--active-item-color, colors.$text);
+                background-color: var(--active-item-background-color, var(--color-primary));
+                color: var(--active-item-color, var(--color-text));
                 border: none;
             }
         }
