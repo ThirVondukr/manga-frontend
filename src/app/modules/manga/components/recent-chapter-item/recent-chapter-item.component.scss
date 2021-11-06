@@ -9,14 +9,14 @@
     grid-template-columns: 70px 1fr;
     grid-gap: 1rem;
     align-items: center;
-
-    app-manga-cover ::ng-deep img {
-        border-radius: 9999px;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-    }
-
     background-color: colors.$background-darker
+}
+
+.manga-cover {
+    border-radius: 9999px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    width: 100%;
 }
 
 .recent-chapter-info {
