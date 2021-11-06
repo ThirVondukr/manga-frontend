@@ -9,8 +9,15 @@ import {
     UserAvatarComponent,
 } from "./components";
 import {CdnImageDirective} from "./directives";
-import {TimeAgoPipe} from "src/app/modules/shared/pipes";
+import {TimeAgoPipe} from "./pipes";
+import {BreakPoint, BREAKPOINT_OBSERVER_CONFIG, BreakpointConfig} from "./services";
 
+const breakpointConfig: BreakpointConfig[] = [
+    {breakpoint: BreakPoint.mobile, minWidth: 0},
+    {breakpoint: BreakPoint.sm, minWidth: 660},
+    {breakpoint: BreakPoint.md, minWidth: 1024},
+    {breakpoint: BreakPoint.lg, minWidth: 1280},
+];
 
 @NgModule({
     declarations: [
@@ -36,6 +43,12 @@ import {TimeAgoPipe} from "src/app/modules/shared/pipes";
     ],
     imports: [
         CommonModule,
+    ],
+    providers: [
+        {
+            provide: BREAKPOINT_OBSERVER_CONFIG,
+            useValue: breakpointConfig,
+        }
     ]
 })
 export class SharedModule {

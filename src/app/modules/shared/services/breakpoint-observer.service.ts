@@ -17,7 +17,9 @@ export interface BreakpointConfig {
 
 export const BREAKPOINT_OBSERVER_CONFIG = new InjectionToken<BreakpointConfig[]>("BREAKPOINT_OBSERVER_CONFIG");
 
-@Injectable()
+@Injectable({
+    providedIn: "root"
+})
 export class BreakpointObserverService {
 
     public breakpoint$: Observable<BreakPoint> = fromEvent(window, "resize")
