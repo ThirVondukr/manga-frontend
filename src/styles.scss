@@ -1,4 +1,4 @@
-@use "styles/colors";
+@import "styles/theme";
 @import "styles/atomic/__init__";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
@@ -10,5 +10,5 @@ html {
 
 body {
     margin: 0;
-    background-color: colors.$background-primary;
+    background-color: var(--color-background);
 }

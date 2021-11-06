@@ -1,4 +1,3 @@
-@use "colors";
 @use "sass:color";
 
 @mixin rounded($roundness: 1) {
@@ -6,7 +5,7 @@
 }
 
 @mixin text($font-size: 1rem) {
-    color: colors.$text;
+    color: var(--color-text);
     margin: 0;
     font-size: $font-size;
     font-family: "Montserrat", sans-serif;
@@ -22,20 +21,21 @@
     padding-bottom: $padding;
 }
 
-@mixin alternating-list(
-    $primary: colors.$background-darker,
-    $alternate: colors.$background-darker-alternate,
-    $hover: color.scale($alternate, $lightness: 5%),
-) {
-    background-color: $primary;
+@mixin alternating-list{
+    background-color: var(--color-background-darker);
     &:hover {
-        background-color: $hover;
+        background-color: var(--color-background-lighter);
     }
     &:nth-child(2n) {
-        background-color: $alternate;
+        background-color: var(--color-background-alternate);
 
         &:hover {
-            background-color: $hover;
+            background-color: var(--color-background-lighter);
         }
     }
+}
+
+@mixin disabled() {
+    color: var(--color-disabled);
+    background-color: var(--color-disabled-background);
 }

@@ -1,4 +1,3 @@
-@use "src/styles/colors";
 @use "src/styles/mixins";
 @use "src/styles/atomic/text";
 
@@ -7,13 +6,13 @@
     @extend .text-base;
     font-weight: bold;
     box-sizing: border-box;
-    background-color: colors.$primary;
+    background-color: var(--color-primary);
     padding: 0.66em 0.75em;
     border: none;
     cursor: pointer;
 
     &:disabled {
-        @include colors.disabled;
+        @include mixins.disabled;
         cursor: inherit;
     }
 }
