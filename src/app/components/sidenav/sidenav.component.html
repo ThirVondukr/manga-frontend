@@ -11,11 +11,13 @@
         <a [routerLink]="mangaRouting.HOME"
            class="nav-item"
            routerLinkActive="nav-item--active"
+           [routerLinkActiveOptions]="{'exact': true}"
         >Home
         </a>
         <a [routerLink]="mangaRouting.FEED"
            class="nav-item"
            routerLinkActive="nav-item--active"
+           [routerLinkActiveOptions]="{'exact': true}"
         >Latest Updates</a>
     </div>
 </nav>
