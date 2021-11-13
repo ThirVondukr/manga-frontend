@@ -4,7 +4,10 @@ import {ReaderComponent} from "src/app/modules/manga-reader/components";
 
 
 const routes: Routes = [
-    {path: ":titleSlug/chapter/:chapterId", component: ReaderComponent}
+    {
+        path: ":titleSlug/chapter/:chapterId",
+        component: ReaderComponent
+    }
 ];
 
 @NgModule({

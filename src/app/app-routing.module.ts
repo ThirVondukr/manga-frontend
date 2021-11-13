@@ -19,12 +19,12 @@ const routes: Route[] = [
         component: MainContainerComponent,
         children: [
             {
-                path: "manga",
-                loadChildren: () => import("src/app/modules/manga/manga.module").then(m => m.MangaModule)
-            },
-            {
                 path: "auth",
                 loadChildren: () => import("src/app/modules/auth/auth.module").then(m => m.AuthModule)
+            },
+            {
+                path: "manga",
+                loadChildren: () => import("src/app/modules/manga/manga.module").then(m => m.MangaModule)
             },
             {
                 path: "users",

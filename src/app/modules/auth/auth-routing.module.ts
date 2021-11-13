@@ -6,7 +6,6 @@ import {SignInFormComponent, SignUpFormComponent} from "./components";
 const routes: Routes = [
     {path: "sign-in", component: SignInFormComponent, canActivate: [NotAuthenticatedGuard]},
     {path: "sign-up", component: SignUpFormComponent, canActivate: [NotAuthenticatedGuard]},
-    {path: "**", redirectTo: "sign-in"}
 ];
 
 @NgModule({
