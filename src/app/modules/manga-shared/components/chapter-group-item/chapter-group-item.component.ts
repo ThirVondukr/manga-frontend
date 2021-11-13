@@ -13,7 +13,7 @@ import {MangaRoutingService} from "src/app/routing";
     styleUrls: ["./chapter-group-item.component.scss"],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ChapterGroupItem implements OnInit {
+export class ChapterGroupItemComponent implements OnInit {
 
     public manga!: GetRecentChapters_recentChapters_edges_node_manga;
 

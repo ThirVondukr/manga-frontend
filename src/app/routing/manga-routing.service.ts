@@ -7,7 +7,7 @@ import {Injectable} from "@angular/core";
 export class MangaRoutingService {
 
     public readonly HOME = ["/manga"];
-    public readonly FEED = ["/manga", "feed"];
+    public readonly FEED = ["/manga", "recent-chapters"];
 
     public mangaDetailsPage(titleSlug: string): any[] {
         return ["/manga", titleSlug];

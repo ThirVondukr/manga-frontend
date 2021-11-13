@@ -3,15 +3,15 @@ import {concat, Observable, ReplaySubject} from "rxjs";
 import {exhaustMap, takeWhile, tap, withLatestFrom} from "rxjs/operators";
 import {GetRecentChapters_recentChapters_edges_node as RecentChapter} from "src/gql/generated/GetRecentChapters";
 import {InfiniteScrollService} from "src/app/modules/shared/services";
-import {ChaptersFeedService} from "../../services";
+import {ChaptersFeedService} from "src/app/modules/manga-shared/services";
 
 
 @Component({
-    templateUrl: "./recent-chapters-feed-page.component.html",
-    styleUrls: ["./recent-chapters-feed-page.component.scss"],
+    templateUrl: "./recent-chapters-page.component.html",
+    styleUrls: ["./recent-chapters-page.component.scss"],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RecentChaptersFeedPageComponent {
+export class RecentChaptersPageComponent {
 
     private readonly _PAGE_SIZE = 20;
 

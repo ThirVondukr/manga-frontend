@@ -1,12 +1,16 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
-import {UserProfilePageComponent} from "./components";
+import {UserChaptersFeedPageComponent, UserProfilePageComponent} from "./components";
 
 
 const routes: Routes = [
     {
         path: ":username/profile",
         component: UserProfilePageComponent,
+    },
+    {
+        path: ":username/feed",
+        component: UserChaptersFeedPageComponent
     },
 ];
 

@@ -1,19 +1,25 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {MangaInfoListComponent} from "./components";
+import {ChapterGroupItemComponent, ChapterGroupListComponent, MangaInfoListComponent} from "./components";
 import {RouterModule} from "@angular/router";
+import {SharedModule} from "src/app/modules/shared/shared.module";
 
 
 @NgModule({
     declarations: [
-        MangaInfoListComponent
+        MangaInfoListComponent,
+        ChapterGroupItemComponent,
+        ChapterGroupListComponent
     ],
     exports: [
-        MangaInfoListComponent
+        MangaInfoListComponent,
+        ChapterGroupItemComponent,
+        ChapterGroupListComponent
     ],
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        SharedModule
     ]
 })
 export class MangaSharedModule {

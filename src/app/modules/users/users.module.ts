@@ -5,6 +5,7 @@ import {FormsModule} from "@angular/forms";
 import {UsersRoutingModule} from "src/app/modules/users/users-routing.module";
 import {MangaSharedModule} from "src/app/modules/manga-shared/manga-shared.module";
 import {
+    UserChaptersFeedPageComponent,
     UserProfileComponent,
     UserProfileMangaFollowsComponent,
     UserProfilePageComponent
@@ -14,6 +15,7 @@ import {SharedModule} from "src/app/modules/shared/shared.module";
 
 @NgModule({
     declarations: [
+        UserChaptersFeedPageComponent,
         UserProfileComponent,
         UserProfileMangaFollowsComponent,
         UserProfilePageComponent,
@@ -24,8 +26,7 @@ import {SharedModule} from "src/app/modules/shared/shared.module";
         FormsModule,
         SharedModule,
         MangaSharedModule
-    ],
-    providers: []
+    ]
 })
 export class UsersModule {
 }

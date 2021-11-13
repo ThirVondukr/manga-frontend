@@ -2,8 +2,7 @@ import {NgModule} from "@angular/core";
 import {Route, RouterModule} from "@angular/router";
 import {
     MangaHomePageComponent,
-    RecentChaptersFeedPageComponent,
-    UserChaptersFeedPageComponent,
+    RecentChaptersPageComponent,
     MangaPageComponent
 } from "./components";
 
@@ -14,12 +13,8 @@ const routes: Route[] = [
         component: MangaHomePageComponent
     },
     {
-        path: "feed",
-        component: RecentChaptersFeedPageComponent
-    },
-    {
-        path: "feed/user/:username",
-        component: UserChaptersFeedPageComponent
+        path: "recent-chapters",
+        component: RecentChaptersPageComponent
     },
     {
         path: ":titleSlug",

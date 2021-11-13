@@ -4,7 +4,7 @@ import {exhaustMap, filter, map, switchMap, takeWhile, tap, withLatestFrom} from
 import {concat, Observable, ReplaySubject} from "rxjs";
 import {UserChaptersFeed_getUserByUsername_chaptersFeed_edges_node} from "src/gql/generated/UserChaptersFeed";
 import {InfiniteScrollService} from "src/app/modules/shared/services";
-import {ChaptersFeedService} from "../../services";
+import {ChaptersFeedService} from "src/app/modules/manga-shared/services";
 
 
 @Component({
