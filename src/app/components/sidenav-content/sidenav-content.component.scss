@@ -1,0 +1,20 @@
+@use "src/styles/icons";
+@use "src/styles/atomic/text";
+@use "src/styles/mixins";
+
+.sidenav__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5rem;
+}
+
+.logo {
+    @extend .text-base;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 1em;
+
+    user-select: none;
+}

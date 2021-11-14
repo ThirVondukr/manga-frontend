@@ -9,24 +9,27 @@ import {TokenInterceptor} from "src/app/modules/auth/interceptors/token.intercep
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {GraphQLModule} from "./graphql.module";
 import {
-    HeaderComponent,
     HeaderUserInfoComponent,
-    MainContainerComponent,
+    NavbarComponent,
     NotFoundPageComponent,
-    SidenavComponent
+    SidenavContentComponent,
 } from "./components";
 import {ApiRequestInterceptor} from "src/app/core/interceptors";
 import {SharedModule} from "src/app/modules/shared/shared.module";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
 
 
 @NgModule({
     declarations: [
         AppComponent,
-        HeaderComponent,
         HeaderUserInfoComponent,
-        MainContainerComponent,
+        NavbarComponent,
         NotFoundPageComponent,
-        SidenavComponent
+        SidenavContentComponent,
     ],
     imports: [
         AppRoutingModule,
@@ -35,7 +38,12 @@ import {SharedModule} from "src/app/modules/shared/shared.module";
         GraphQLModule,
         HttpClientModule,
         UsersModule,
-        SharedModule
+        SharedModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatListModule
     ],
     providers: [
         {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},

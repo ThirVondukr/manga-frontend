@@ -1,12 +1,32 @@
 import {Injectable} from "@angular/core";
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, of} from "rxjs";
 
+interface MenuLink {
+    icon?: string;
+    text: string;
+    path: string;
+}
 
 @Injectable({
     providedIn: "root"
 })
 export class SidenavService {
+
+    private readonly _menuLinks: ReadonlyArray<MenuLink> = [
+        {
+            text: "Home",
+            path: "/"
+        },
+        {
+            text: "Recent chapters",
+            path: "/recent-chapters"
+        }
+    ];
+
+    public readonly menuLinks$ = of(this._menuLinks);
+
     private readonly _isOpen$ = new BehaviorSubject(false);
+
     public readonly isOpen$ = this._isOpen$.asObservable();
 
     public open() {

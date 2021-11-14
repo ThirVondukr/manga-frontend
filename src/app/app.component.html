@@ -1,5 +1,22 @@
-<app-header></app-header>
-<app-sidenav></app-sidenav>
-<div class="container-wrapper">
-    <router-outlet></router-outlet>
-</div>
+<mat-sidenav-container>
+
+    <mat-sidenav
+        class="sidenav"
+        mode="over"
+        fixedInViewport
+        (closed)="sidenavService.close()"
+        [opened]="sidenavService.isOpen$ | async">
+        <app-sidenav-content></app-sidenav-content>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="main-content">
+
+        <app-navbar></app-navbar>
+
+        <div class="container-wrapper">
+            <router-outlet></router-outlet>
+        </div>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button
+            (click)="sidenavService.open()">
+        <mat-icon class="icon-lg">menu</mat-icon>
+    </button>
+
+    <span class="spacer"></span>
+
+    <ng-container *ngIf="authService.isLoggedIn$ | async else loggedOut">
+        <app-header-user-info
+            *ngIf="authService.user$ | async as user"
+            [user]="user">
+        </app-header-user-info>
+    </ng-container>
+</mat-toolbar>
+
+<ng-template #loggedOut>
+    <button mat-icon-button [routerLink]="authRouting.SIGN_IN">
+        <mat-icon class="icon-lg">account_circle</mat-icon>
+    </button>
+</ng-template>

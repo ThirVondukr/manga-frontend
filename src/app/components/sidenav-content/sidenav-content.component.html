@@ -1,0 +1,14 @@
+<div class="sidenav__header">
+    <p class="logo">M</p>
+    <button mat-icon-button (click)="sidenavService.close()">
+        <mat-icon class="icon-lg">close</mat-icon>
+    </button>
+</div>
+<mat-nav-list>
+    <mat-list-item
+        *ngFor="let link of sidenavService.menuLinks$ | async"
+        [routerLink]="link.path"
+    >
+        {{ link.text }}
+    </mat-list-item>
+</mat-nav-list>

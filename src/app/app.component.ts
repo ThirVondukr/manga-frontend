@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {AuthService} from "src/app/modules/auth/services";
+import {SidenavService} from "src/app/core/services";
 
 
 @Component({
@@ -10,6 +11,7 @@ import {AuthService} from "src/app/modules/auth/services";
 export class AppComponent implements OnInit {
     constructor(
         private readonly _authService: AuthService,
+        public readonly sidenavService: SidenavService
     ) {
     }
 
