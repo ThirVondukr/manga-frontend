@@ -3,8 +3,6 @@ import {CommonModule} from "@angular/common";
 import {
     ButtonComponent,
     IconComponent,
-    InputComponent,
-    InputWrapperComponent,
     PaginationNavComponent,
     UserAvatarComponent,
 } from "./components";
@@ -23,8 +21,6 @@ const breakpointConfig: BreakpointConfig[] = [
     declarations: [
         ButtonComponent,
         IconComponent,
-        InputComponent,
-        InputWrapperComponent,
         PaginationNavComponent,
         UserAvatarComponent,
         CdnImageDirective,
@@ -34,8 +30,6 @@ const breakpointConfig: BreakpointConfig[] = [
         CommonModule,
         ButtonComponent,
         IconComponent,
-        InputComponent,
-        InputWrapperComponent,
         PaginationNavComponent,
         UserAvatarComponent,
         CdnImageDirective,

@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, OnDestroy} from "@angular/core";
 import {AuthService} from "src/app/modules/auth/services/auth.service";
 import {ReplaySubject} from "rxjs";
 import {takeUntil} from "rxjs/operators";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {AuthRoutingService, UserRoutingService} from "src/app/routing";
 
@@ -27,17 +27,16 @@ export class SignInFormComponent implements OnDestroy {
         public readonly authRouting: AuthRoutingService,
     ) {
         this.form = _fb.group({
-            username: [""],
-            password: [""],
+            username: ["", [Validators.required]],
+            password: ["", [Validators.required]],
         });
     }
 
-
-    public submit() {
+    public onSubmit() {
         this._authService.authenticate(this.form.value).pipe(
             takeUntil(this.unsubscribe)
         ).subscribe(async user => {
-            await this._router.navigate(this._userRouting.userProfile(user.username))
+            await this._router.navigate(this._userRouting.userProfile(user.username));
         });
     }
 

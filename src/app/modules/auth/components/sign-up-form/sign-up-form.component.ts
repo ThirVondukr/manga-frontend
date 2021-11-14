@@ -1,10 +1,10 @@
 import {ChangeDetectionStrategy, Component, OnDestroy} from "@angular/core";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "src/app/modules/auth/services/auth.service";
 import {Subject} from "rxjs";
 import {switchMap, takeUntil, tap} from "rxjs/operators";
 import {Router} from "@angular/router";
-import {UserRoutingService} from "src/app/routing";
+import {AuthRoutingService, UserRoutingService} from "src/app/routing";
 
 
 @Component({
@@ -21,19 +21,35 @@ export class SignUpFormComponent implements OnDestroy {
 
     constructor(
         private readonly _fb: FormBuilder,
+        private readonly _router: Router,
         private readonly _authService: AuthService,
         private readonly _usersRouter: UserRoutingService,
-        private readonly _router: Router,
+        public readonly authRouting: AuthRoutingService
     ) {
         this.form = _fb.group({
-            username: [""],
-            email: [""],
-            password: [""],
-            passwordConfirm: [""],
+            username: ["", [
+                Validators.required,
+                Validators.minLength(5),
+                Validators.maxLength(24)]
+            ],
+            email: ["", [
+                Validators.required,
+                Validators.email]
+            ],
+            password: ["", [
+                Validators.required,
+                Validators.minLength(8),
+                Validators.maxLength(48)]
+            ],
+            passwordConfirm: ["", [
+                Validators.required,
+                Validators.minLength(8),
+                Validators.maxLength(48)]
+            ],
         });
     }
 
-    public submit(): void {
+    public onSubmit(): void {
         const form = this.form.value;
         this._authService.createAccount({
             username: form.username,

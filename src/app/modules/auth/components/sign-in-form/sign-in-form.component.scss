@@ -1,20 +1,24 @@
+@use "sass:map";
+
+@use "src/styles/theme";
+@use "src/styles/forms";
 @use "src/styles/breakpoints" as bp;
 
 form {
+    @include forms.vertical;
+    max-width: bp.$sm;
     margin: 0 auto;
 }
 
-.submit-button {
-    grid-column: 1/ -1;
-    justify-self: center;
-}
+.hints {
+    margin: 0 auto;
 
-.register-hint {
-    grid-column: 1/ -1;
-    justify-self: center;
-
-    & > :link, & > :visited {
-        color: var(--color-primary);
+    & > a {
+        color: map-get(theme.$primary, default-contrast);
         text-decoration: none;
+    }
+
+    & > a:hover {
+        color: map-get(theme.$primary, default);
     }
 }

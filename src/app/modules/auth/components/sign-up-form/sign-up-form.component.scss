@@ -1,8 +1,23 @@
+@use "sass:map";
+
+@use "src/styles/theme";
+@use "src/styles/forms";
+@use "src/styles/breakpoints" as bp;
+
+
 form {
+    @include forms.vertical;
+    max-width: bp.$sm;
     margin: 0 auto;
 }
 
-button {
-    grid-column: 1/ -1;
-    justify-self: center;
+.sign-in-link {
+    margin: 0 auto;
+
+    color: map-get(theme.$primary, default-contrast);
+    text-decoration: none;
+
+    &:hover {
+        color: map-get(theme.$primary, default);
+    }
 }

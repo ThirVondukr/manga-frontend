@@ -1,5 +1,3 @@
-@use "~@angular/material" as mat;
-
 @use "styles/theme";
 @use "styles/atomic";
 
@@ -12,9 +10,3 @@ html {
 body {
     margin: 0;
 }
-
-$custom-typography: mat.define-typography-config(
-    $font-family: '"Montserrat", sans-serif',
-);
-
-@include mat.core($custom-typography);

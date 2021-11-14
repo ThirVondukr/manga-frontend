@@ -1,23 +1,28 @@
 import {NgModule} from "@angular/core";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {BaseAuthFormComponent, SignInFormComponent, SignUpFormComponent} from "./components";
+import {SignInFormComponent, SignUpFormComponent} from "./components";
 import {AuthRoutingModule} from "src/app/modules/auth/auth-routing.module";
 import {SharedModule} from "src/app/modules/shared/shared.module";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
     declarations: [
         SignInFormComponent,
         SignUpFormComponent,
-        BaseAuthFormComponent,
     ],
     imports: [
         AuthRoutingModule,
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
-        SharedModule
+        SharedModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule
     ],
 })
 export class AuthModule {
