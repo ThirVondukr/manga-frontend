@@ -1,31 +1,35 @@
-<app-manga-block>
-    <a [routerLink]="mangaRouting.FEED"
-       class="block-title text-link"
-       header
-    >
-        Recent Chapters
-    </a>
-    <div class="recent-chapters">
-        <app-recent-chapter-item
-            *ngFor="let chapter of latestChapters$ | async"
-            [chapter]="chapter"
-        >
-        </app-recent-chapter-item>
-    </div>
-</app-manga-block>
+<app-recent-chapter-item
+    [chapter]='{id: 0, title: "Extras", volume: 6, number: 46, numberExtra: 2, publishedAt: ""}'
+    [manga]='{id: 0, title: "Made in Abyss"}'
+    [translatorsGroup]='{title: "Translators"}'
+    imageUrl="http://127.0.0.1:8000/static/manga-art/03131185-602c-4b64-a4bb-e308b1354bf6.png"
+>
+</app-recent-chapter-item>
 
 
-<app-manga-block>
-    <p
-        class="block-title"
-        header>
-        Most Liked
-    </p>
-    <div class="most-liked-manga">
-        <app-popular-manga-item
-            *ngFor="let manga of popularManga$ | async"
-            [manga]="manga"
-        >
-        </app-popular-manga-item>
-    </div>
-</app-manga-block>
+<app-manga-item
+    [manga]='{
+        id: 0,
+        title:"Spice and Wolf",
+        type: "Manga",
+        status: "Publishing",
+        likesCount: 4242,
+        isLikedByViewer: false
+    }'
+    coverUrl="http://127.0.0.1:8000/static/seeding/manga/spice-and-wolf.png"
+>
+    <p date>Published {{ "2021-11-18T21:29:29+0000" | timeAgo}}</p>
+</app-manga-item>
+<app-manga-item
+    [manga]='{
+        id: 0,
+        title:"Spice and Wolf",
+        type: "Manga",
+        status: "Publishing",
+        likesCount: 4242,
+        isLikedByViewer: false
+    }'
+    coverUrl="http://127.0.0.1:8000/static/seeding/manga/spice-and-wolf.png"
+>
+    <p date>Updated {{ "2021-11-20T21:29:29+0000" | timeAgo}}</p>
+</app-manga-item>
