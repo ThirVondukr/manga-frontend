@@ -1,0 +1,17 @@
+@forward "card";
+
+.vertical-text-group {
+    display: flex;
+    flex-flow: column nowrap;
+    grid-gap: 4px;
+
+    &--expanded-gap {
+        grid-gap: 8px;
+    }
+}
+
+.icon-text {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+}

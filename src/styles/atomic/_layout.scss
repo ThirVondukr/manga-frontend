@@ -1,0 +1,23 @@
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.grid-gap-05 {
+    grid-gap: 0.5rem;
+}
+
+.grid-gap-1 {
+    grid-gap: 1rem;
+}

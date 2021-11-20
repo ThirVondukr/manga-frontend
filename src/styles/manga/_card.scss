@@ -1,0 +1,17 @@
+@use "src/styles/colors";
+
+@mixin manga-card {
+    display: flex;
+    grid-gap: 24px;
+    flex-flow: row nowrap;
+
+    border-radius: 2px;
+    padding: 12px;
+    box-sizing: border-box;
+
+    background-color: colors.$background-darker;
+    &:hover {
+        cursor: pointer;
+        background-color: colors.$background-darker-highlight
+    }
+}

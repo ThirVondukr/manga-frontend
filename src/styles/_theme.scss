@@ -3,6 +3,7 @@
 
 $custom-typography: mat.define-typography-config(
     $font-family: '"Montserrat", sans-serif',
+    $body-1: mat.define-typography-level(16px, 20px, 400),
 );
 
 $primary: mat.define-palette(mat.$pink-palette);

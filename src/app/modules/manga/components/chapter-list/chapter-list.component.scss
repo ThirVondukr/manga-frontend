@@ -12,7 +12,7 @@
     border-radius: 4px 4px 0 0;
 }
 
-.chapter {
+.text {
     @include mixins.alternating-list;
     padding: 1rem 1.25rem;
     display: flex;
