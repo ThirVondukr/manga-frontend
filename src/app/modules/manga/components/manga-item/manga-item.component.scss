@@ -1,0 +1,13 @@
+@use "src/styles/manga";
+
+:host {
+    @include manga.manga-card;
+
+    & * {
+        margin: 0;
+    }
+}
+
+.cover {
+    height: 80px;
+}

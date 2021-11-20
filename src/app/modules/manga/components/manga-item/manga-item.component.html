@@ -1,0 +1,26 @@
+<img
+    class="cover"
+    [src]="coverUrl"
+    alt="{{manga.title}} cover"
+>
+<div class="
+    vertical-text-group
+    vertical-text-group--expanded-gap
+">
+    <p class="
+        font-500 text-xl
+        flex flex-row align-items-center grid-gap-1"
+    >
+        <span>{{manga.title}}</span>
+        <span class="flex flex-row align-items-center grid-gap-05">
+            <mat-icon class="icon-text">favorite_border</mat-icon>
+            <span class="font-400 text-xs">
+                {{manga.likesCount}}
+            </span>
+        </span>
+    </p>
+    <p class="text-xs">{{manga.type}} - {{manga.status}}</p>
+    <p class="font-200 text-xs">
+        <ng-content select="[date]"></ng-content>
+    </p>
+</div>
