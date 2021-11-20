@@ -1,16 +1,24 @@
 <img
-    class="manga-cover"
-    appCdnImage
-    [src]="chapter.manga.cover?.imageUrl"
-    [alt]="chapter.manga.title"
-/>
-
-<div *ngIf="chapter.manga as manga" class="recent-chapter-info">
-    <a [routerLink]="mangaRouting.mangaDetailsPage(manga.titleSlug)" class="text-md text-link">
-        Chapter {{chapter.number}}
-    </a>
-
-    <p class="text-base">{{manga.title}}</p>
-    <p class="text-base">{{chapter.publishedAt | timeAgo}}</p>
+    class="cover"
+    [src]="imageUrl"
+    alt=""
+>
+<div class="vertical-text-group">
+    <p class="text-with-icon font-500">
+        {{manga.title}}
+        <mat-icon class="icon-text">bookmark_border</mat-icon>
+    </p>
+    <p class="text-xs">
+        Vol. {{chapter.volume}} Chapter {{chapter.number}}.{{chapter.numberExtra}} - {{chapter.title}}
+    </p>
+    <p class="text-xs font-200">4 hours ago</p>
 </div>
-
+<div>
+    <p class="
+        text-with-icon text-sm
+        flex flex-row align-items-center grid-gap-1"
+    >
+        {{translatorsGroup.title}}
+        <mat-icon class="icon-text">group</mat-icon>
+    </p>
+</div>
