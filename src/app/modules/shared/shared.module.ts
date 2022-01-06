@@ -2,7 +2,6 @@ import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {
     ButtonComponent,
-    IconComponent,
     PaginationNavComponent,
     UserAvatarComponent,
 } from "./components";
@@ -20,7 +19,6 @@ const breakpointConfig: BreakpointConfig[] = [
 @NgModule({
     declarations: [
         ButtonComponent,
-        IconComponent,
         PaginationNavComponent,
         UserAvatarComponent,
         CdnImageDirective,
@@ -29,7 +27,6 @@ const breakpointConfig: BreakpointConfig[] = [
     exports: [
         CommonModule,
         ButtonComponent,
-        IconComponent,
         PaginationNavComponent,
         UserAvatarComponent,
         CdnImageDirective,
