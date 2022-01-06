@@ -12,6 +12,7 @@ import {
 } from "./components";
 import {MangaSharedModule} from "src/app/modules/manga-shared/manga-shared.module";
 import {SharedModule} from "src/app/modules/shared/shared.module";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {SharedModule} from "src/app/modules/shared/shared.module";
     imports: [
         MangaRoutingModule,
         SharedModule,
-        MangaSharedModule
+        MangaSharedModule,
+        MatIconModule
     ]
 })
 export class MangaModule {

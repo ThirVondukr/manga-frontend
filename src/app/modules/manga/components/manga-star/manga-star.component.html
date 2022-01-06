@@ -1,3 +1,4 @@
-<app-icon (click)="onClick()">
-    {{liked ? "star" : "star_outline"}}
-</app-icon>
+<mat-icon
+    [svgIcon]="liked ? 'star' : 'star_outline'"
+    (click)="onClick()"
+></mat-icon>

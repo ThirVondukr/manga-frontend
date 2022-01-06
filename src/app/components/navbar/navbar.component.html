@@ -1,7 +1,6 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button
-            (click)="sidenavService.open()">
-        <mat-icon class="icon-lg">menu</mat-icon>
+    <button mat-icon-button (click)="sidenavService.open()">
+        <mat-icon [svgIcon]="'menu'"></mat-icon>
     </button>
 
     <span class="spacer"></span>
@@ -16,6 +15,6 @@
 
 <ng-template #loggedOut>
     <button mat-icon-button [routerLink]="authRouting.SIGN_IN">
-        <mat-icon class="icon-lg">account_circle</mat-icon>
+        <mat-icon [svgIcon]="'account'"></mat-icon>
     </button>
 </ng-template>

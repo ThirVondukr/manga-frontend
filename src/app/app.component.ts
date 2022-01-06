@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {AuthService} from "src/app/modules/auth/services";
-import {SidenavService} from "src/app/core/services";
+import {IconRegistryService, SidenavService} from "src/app/core/services";
 
 
 @Component({
@@ -11,11 +11,14 @@ import {SidenavService} from "src/app/core/services";
 export class AppComponent implements OnInit {
     constructor(
         private readonly _authService: AuthService,
-        public readonly sidenavService: SidenavService
+        private readonly _iconService: IconRegistryService,
+        public readonly sidenavService: SidenavService,
     ) {
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this._authService.init();
+        this._iconService.init();
     }
+
 }
